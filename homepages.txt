@@ -1,0 +1,738 @@
+##Must-have features##
+
+===
+(1) "Download" button to each page where a table is shown to export the data as a csv file
+-- Look at the button section and create a new button
+-- The modal will popup
+1. Create a button name
+2. Fill in the text label - this is the display label on the webapp
+3. Assign a static id - this is the ID for javascript selector
+4. Click Finish
+5. Now create a Dynamic Region
+6. Give it a name
+7. Make sure "Event" is Click, "Selection Type" is Button, and "Button" is the button you created for that page
+8. Make the Dynamic Region Execute Javascript
+9. Include this javascript
+$(document).ready(function() {
+
+var pID = $v('pFlowId');
+var pStepId = $v('pFlowStepId');
+var pIn = $v('pInstance');
+var url = 'http://apexea.oracle.com/pls/apex/f?p=' + pID + ':' + pStepId + ':' + pIn + ':CSV:';
+
+window.open(url, "_blank");
+
+console.log(url);
+
+});
+10. Click Finish
+
+===
+(2) Created a form in which the user is able to upload any type of documents into the database along with the option of associating it with a particular Project.
+Feature: File Uploading/Downloading
+This feature should be pretty self-explainatory. Our implementation is as follows: We have created a form in which the user is able to upload any type of documents into the database along with the option of associating it with a particular Project. The user then has the option of downloading the uploaded file through a simple 'Download' hyperlink which is displayed in the report.
+
+To begin this tutorial, you must create a Files table which might include the following attributes: filename, comments, created, created_by, file_size, download (this column will be displayed as a hyperlink to download the file). Some sample code is displayed below. To use this code, copy paste it and upload it as a SQL script.
+
+Note: a BLOB (binary large object) is a varying-length binary string. This file type will be used and the terminology will be thrown around to indicate the use of uploading or downloading a File/BLOB.
+
+Part 1
+File Uploading Part 1: Creating a 'Files' Page
+Step 1: Create a 'Files' page -> a Blank page with an Interactive Report. In order to query the FILE_SIZE and DOWNLOAD columns that were specified in the table you created in the previous explanation, use the following SQL code: sys.dbms_lob.getlength(column_name).
+Step 2: Edit the Report Attributes and Column Definition and enter FILESIZE for the Number/Date Format value for the FILE_SIZE column. Then, edit the Report Attributes and Column Definition for the DOWNLOAD column, select "BLOB Format" for the Number/Date Format value and apply changes. By setting the Column Definition, this will display the file within the DOWNLOAD column as a hyperlink to download the file.
+
+Part 2
+File Uploading Part 2: Creating a 'File' Page
+Create another Blank page called 'File' and make the parent 'Files'. This page will include a set of items which will allow you to specify and upload files to the table we created in Part 1.
+Step 1: Create an arbitrary region on the page, we will call this region "File" for this tutorial. In this region, we will create a 'File Browse...' item and label it as "DOWNLOAD_LINK". This item will allow us to select a file to upload.
+Step 2: Create an additional 'Text Field' item in the File region and label it as "FILE_COMMENTS". This will allow us to add additional comments to the associated file.
+Note: When creating an item, make sure to specify the Source and it's assicated Source Type. In both of the above cases, select 'Database Column' and it's associated Source value accordingly.
+Step 3: On the Breadcrumb region of the page, create a "Add File" button. For the Action of the button, select "Submit Page" and the Database Action as "SQL INSERT action". For conditions, specify the Expression, which will be the ID of the uploaded item. This button will allow the file to be added to the Files report we created in Part 1.
+
+Part 3
+File Uploading Part 3: Fetching and Processing Rows
+Step 1: Create an Automatic Row Fetch process with the following attributes: Process Point (On Load - After Header).
+Step 2: Create an Automatic Row Processing (DML) with the following attributes: Process Point (On Submit - After Computations and Validations).
+Note: Specify the Table Name, Primary Key Column, and the Primary Key Item accordingly. Ensure that your primary keys are entered correctly. This step is imperative for the functionality of the entire process.
+
+You're done! Please note that this is a very tedious process and there's a lot of room for error. The above steps illustrate the overall process and the key steps in setting up this feature.
+
+
+===
+(3) Custom search bar that returns a report page related to the tables
+Feature: Custom search bar on home page that returns a report for the tables that match the search query and returns “No result found” when the query searched was not found in any table
+
+Implementation: uses SQL ‘like’ statement to match certain columns in table
+
+*** The names do not matter here, as long as they match in their respective areas. We have specified names for clarity.
+
+Home Page
+
+Create static region
+1.  Title: Home
+2.  Template: hero template
+3.  Display Point: Page Template Region Position 1
+
+Create another static region
+1.  Title: Search
+2.  Template: Blank Region with Attributes
+3.  Parent Region: Home
+4.  Region Display Selector: Yes
+
+Create item
+1.  Item Name: P1_SEARCH
+2.  Item Type: Text Field
+3.  Region: Search
+4.  Template: Hidden Label
+5.  Create item, go to edit page 1 and click on the item created
+6.  Under User Interface->Template Options
+7.  Check the box next to “Use default template options”
+8.  Check the box next to “Stretch Form Item”
+9.  Size: X-Large
+10. Go to Element tab
+11. Value Place Holder: “Search All Tables…”
+12. Form Element Width: 50
+13. Submit When Enter is Pressed: Yes
+14. Source Type: Null
+
+Create blank page named “Search Results”
+1.  Template: Standard Page
+
+Under Page Processing of Page 1 Edit Page
+1.  Create branch named “Search Results”
+2.  Branch Type: Branch to Page or URL
+3.  Page: <# of Search Results page>
+4.  Clear Cache: “1,<page# of Search Results page>”
+5.  After creating branch, go back and edit the “Search Results” branch
+6.  Go to Action tab
+7.  Set These Items: P<# of Search Results page>_SEARCH
+8.  With These Values:
+
+Search Results Page
+
+Create static region named “Search Results”
+1.  Display Point: Region Position 01
+2.  Template: Hero Region
+3.  Region Display Selector: Yes
+
+Create static region named “Search”
+1.  Parent Region: Search Results
+2.  Template: Blank Region with Attributes
+
+Create Item called “P<page#>_SEARCH”
+1.  Region: Search
+2.  Field Width: 50
+3.  Template: Hidden Label
+4.  Submit When Enter Pressed: Yes
+5.  Source Type: Item
+6.  Item Source Value:
+7.  Create item, go to Search Results edit page and click on the item created
+8.  Go to Template Options
+9.  Check the box next to “Use default template options”
+10. Check the box next to “Stretch Form Item”
+11. Size: X-Large
+
+Create branch named “Search Results”
+1.  Page: <page# of Search Results Page>
+2.  For the tables you want to show
+
+Create classic report region
+1.  Source Type: SQL Query
+2.  Enter a SQL query for the table and columns you want to show into Region Source
+3.  Put them in the order you want by changing the sequence number
+4.  After creating the region, go back and edit that region
+5.  Conditions->Condition Type: Exists(SQL query returns at least one row)
+6.  Copy entire region source into Expression 1
+
+Create Page Item named “Query”
+1.  Item Type: Display Only
+2.  Sequence: 9
+3.  Region: Search Results
+4.  Label: Showing results for
+5.  Source Used: Always replacing any existing value in session state
+6.  Source Type: Item
+7.  Source (Item Name): P<page#>_SEARCH
+
+
+===
+(4) Implemented data loading. We created data loading pages for each user type of data that can be "created" by a user, and linked them to new buttons next to the create button.
+
+===
+(5) This application features the Region Display Selectors. Region Display Selectors help organize multiple regions on a page allowing users to navigate through the multiple regions by selecting the region to display. In this databse appliation, Person, Department, and Project Assignments all have Region Display Selectors to switch between the Reports for those relations and the charts analyzing the data for those relations.
+
+Description
+This application features the Region Display Selectors. Region Display Selectors help organize multiple regions on a page allowing users to navigate through the multiple regions by selecting the region to display.
+
+In order to implement the region display selector, a page must have multiple non modal regions. For example, it may contains mutltiple forms, reports, charts, and calendars contained anywhere on the page.
+
+How to Create a Region Display Selector
+
+For each region to be displayed in the Region Display Selctor menu, first edit the attribute of the desired region by selecting the Yes option for the Region Display Selector feild in the Region Definition section.
+
+Once the regions are made and selected for display, create a new region by selecting the "Region Display Selector" option.
+
+You can select different templates to format the region as desirable. Notice that as you create this region, it will conclude the different regions that will be selected by the Region Display Selctor. Once you are done specifiying any optional selectons, click Create.
+
+If you decide to add additional regions later on, simply edit the attributes for those new regions to be included in the target Selector Menu.
+
+By default, this will provide an optional choice 'Show All.' In order to remove the "Show All" option, you will need to create a Dynamic Action. This action will include javascript that hides the "Show All" option everytime the page is rendered.
+
+Follow these steps to create the Dynamic Action.
+
+1. Add a new Dynamic Action for the Page.
+2. Name it Remove Show All Option.
+3. Select the Event to Page Load. This will ensure that the option is removed evertime the page is rendered.
+4. Select the Action to Execute Javascript Code.
+5. Add the following lines of javascirpt code to the Code feild.
+$('.apex-rds li:first-child').remove();
+
+$('.apex-rds li:first-child').addClass('apex-rds-first');
+
+$('.apex-rds li:first-child > a').trigger('click');
+
+6. Select the Selection Type as Region and the Region as the Region Display Selector.
+The a region display selector can additionally include another region display selector within using the same method as described for the page's region display selector.
+
+In this databse appliation, Person, Department, and Project Assignments all have Region Display Selectors to switch between the Reports for those relations and the charts analyzing the data for those relations.
+
+
+===
+(7) We decided to attempt to add a tree to our application that shows the relationship between managers and employees, however, it currently does not support managers having managers.
+Homework 6: Tree of Managers and Employees
+We decided to attempt to add a tree to our application that shows the relationship between managers and employees. It can be found on the sidebar under "Manager-Employee Tree". We currently do not support managers having managers, so the tree structure didn't represent the data as well as we hoped; only one manager can be the root of the tree.
+
+To reproduce this, the steps are as follows:
+1. Add a manager_id attribute to SIM_Person so we can associate employees with managers
+2. Create Page
+3. Select Tree for the type (this adds a tree region to the page)
+4. For "Table/View Name" choose SIM_Person
+5. Choose the following: ID: Manager_ID, Parent ID: Person_ID, Node Text: NAME, Start With: PERSON_ID, Start Tree: Based on static value. Start Value: the ID of the manager we want to be the root of the tree (currently 102).
+
+
+===
+(8) We created a Shared Component known as a "Shortcut" to link to a page that includes a pie chart. To create the shortcut, which is a reusable code piece that can be written in PL/SQL, HTML, or Javascript, go to Shared Components -> Other -> Shortcuts. We crafted an HTML statement that linked to the page we created that included the Pie chart
+Description of Feature
+Daniel Abrego (dea496)
+Drake Sanderson (drs2782)
+We created a Shared Component known as a "Shortcut" to link to a page that includes a pie chart
+First we made the Pie chart based on the Percentage of Employees in each Department
+This was simple, we used the new page wizard for creating a pie chart then created a SELECT statement that joined the SIM_DEPT and SIM_PERSON tables
+Then we had to create the shortcut, which is a reusable code piece that can be written in PL/SQL, HTML, or Javascript
+You can create Shortcuts by going to Shared Components -> Other -> Shortcuts
+We crafted an HTML statement that linked to the page we created that included the Pie chart
+The statement we crafted:
+
+
+        <a href="https://apexea.oracle.com/pls/apex/f?p=1477:30:&APP_SESSION:::::">Percentage of Employees to Departments</a>
+
+Where &APP_SESSION provides the session id which is part of the URL, and took a bit of time to figure out. You can't forget to include a '.' at the end of SESSION, if I include it then you will get the session id as such 105071969265701.
+Afterwards you can insert the Shortcut in any region header or footer by simply citing in in quotes such as "CHART_LINK" and it associates with the Shortcut.
+Below is the link, it is also found in the footer of the Department page
+
+
+===
+(9) Implemented a Shuttle to change employee assignments on projects while editing or creating a project, see edit button on a Project
+Description of Changes
+We implemented a Shuttle to change employee assignments on projects while editing or creating a project.
+
+We added the Shuttle as an item to the form on SIM_Projects in the form region. It uses a list of values to dynamically get the names of the employees in the department that the project is in. It moves the employees currently assigned to the project to the right side of the shuttle.
+
+The list of values used to supply the person names is generated with the following SQL.
+
+select p.name as d,
+       p.person_id as r
+  from SIM_person p join SIM_dept d
+       on p.Sim_dept_dept_id = d.dept_id
+       where d.dept_id = :P12_SIM_DEPT_DEPT_ID
+ order by 1
+
+When the form is submitted, a PL/SQL script runs which parses the ids of the employees selected into a collection. It then inserts any new employees into the SIM_p2p table, and deletes any employees that are no longer assigned to the project. This ensures that the list of employees assigned to the project is the same as the list selected in the shuttle regardless of any operations performed on the shuttle. The PL/SQL script is as follows, it runs in a Processing event that runs after the form is submitted.
+
+declare
+    tab apex_application_global.vc_arr2;
+    person_cnt   pls_integer;
+begin
+    APEX_COLLECTION.CREATE_OR_TRUNCATE_COLLECTION(p_collection_name => 'P12COL');
+    tab := apex_util.string_to_table (:p12_employees);
+
+    FOR i IN 1 .. tab.count LOOP
+        APEX_COLLECTION.ADD_MEMBER(
+          p_collection_name => 'P12COL',
+          p_c001 => tab(i)
+        );
+    END LOOP;
+
+    insert into SIM_p2p (SIM_person_person_id, SIM_project_project_id)
+        select c001, :P12_PROJECT_ID
+        from apex_collections
+        where collection_name = 'P12COL' and
+            not exists (select 1 from SIM_p2p o where o.SIM_person_person_id = c001 and
+                           o.SIM_project_project_id = :P12_PROJECT_ID);
+
+    delete from SIM_p2p where
+        SIM_project_project_id = :P12_PROJECT_ID and
+        not exists (select 1 from apex_collections
+                       where collection_name = 'P12COL' and c001 = SIM_person_person_id);
+end;
+The list of values used to populate the shuttle reloads whenever the department selection is changed. This is done by setting the Cascading LOV Reload on the shuttle to the SIM_dept_dept_id field.
+
+We also had to change the form preferences to assign the project_id of the new project to the P12_PROJECT_ID page item when a project is created so that the assignment rows can be created.
+
+
+===
+(10) Implemented a component called “Group Select List,” to sort employees by their respective department in a select list
+We implemented a component called “Group Select List,” To sort employees by their respective department.
+
+Originally, when creating a project assignment, and adding employees to an assignment, the selection dropdown for employees was sorted alphabetically which is a sorting not productive to assigning them to a particular project.
+
+We utilized the Group Select List plugin to implement a sorting of employees by their department (the department itself cannot be selected), allowing users to pick employees for a project based on their assigned department.
+
+After installing the plugin we implemented it using the SQL statement:
+SELECT p.name AS employee_name, p.person_id AS person_id, d.name AS dept_name
+FROM sim_person p, sim_dept d
+WHERE p.sim_dept_dept_id = d.dept_id
+ORDER BY dept_name, employee_name
+
+
+===
+(11) Create buttons on a Modal Form return to the Modal Form. However Cancel Buttom needs to return properly also.
+Feature
+We modified the application so that when a button on a modal form causes another form to pop up (such as when clicking "Create Department" in the "Create Employee" form), once the new form is submitted, it returns to the original form. We couldn't find a convenient feature within APEX to do this, so we had to accomplish it by creating many duplicates of each form. For example, we created a "Form on SIM_Manager_returndept" form as a copy of the "Form on SIM_Manager". This new form is accessed when the "Create Manager" button is clicked in the "Create Department" form, and is configured so that upon submission, it returns to the "Create Manager" form. We did this for each form that is accessed by a button on another form.
+
+===
+(12) Tree view display of Departments to Employees hierarchy
+Feature: Tree view display of Departments to Employees hierarchy
+(located under Departments > Tree - Departments and Managers)
+
+Description/Implementation:
+We created a view by making a union of the SIM_DEPT table and the SIM_PERSON
+table. This created a view that had IDs, parent IDs, and name that we used for
+our tree display.
+
+After creating our view, we went into the Application Builder, created a new
+page, and selected the Tree option. On the page where we selected our view, we
+selected the view we had just created. We then set the following entries:
+
+ID: IDs
+Parent ID: parent IDs
+Node Text: names
+Start With: parent IDs
+Start Tree: null
+
+We then hit next without changing any default options on the rest of the
+subsequent menus.
+
+>>SQL script for view creation
+CREATE OR REPLACE FORCE VIEW "SIM_TREE3" ("NAME", "ID", "PAID") AS
+select name as name,
+dept_id as ID,
+to_number(NULL) as PaID
+
+from SIM_DEPT SIM_DEPT
+
+UNION
+
+SELECT name as name,
+person_id as ID,
+SIM_DEPT_DEPT_ID as PaID
+from SIM_Person SIM_Person
+where SIM_DEPT_DEPT_ID is not null
+
+
+===
+(13) Added Region Display Selectors. Each type of person now has their own Display.
+We added Region Display Selectors. Each type of person now has their own Display.
+1: Add multiple regions to a single page
+2: Under each region's settings, set "Region Display Selector" to "yes"
+3: Add a Region Display Selector region
+
+
+===
+(14) Tree showing projects assigned to employees through M:N relation
+
+
+===
+(15) Added the ability to upload and download files
+Homework 6 - Implementing an APEX Feature
+For homework 6 we chose to try and add the ability to upload and download files. Apex documentation talked about how this had changed and how to support it but was not very clear about what had to be done at the database level. Most of the documentation for the previous version was out of date and so we looked up other ways of doing this.
+
+Setting up the database
+One way to store a file is to use a certain data type called a blob. This is a binary large object. So in order to use this we have to either alter a current table or add a new table to store this information. In order to test this we attempted to create a new document table to store uploaded documents. We also wanted to store information about the file and so we used oracle data modeler to start. The first step was to create a table with the following logical model:
+
+<15_document_model_logical.png>
+
+This model works for a seperate table but if you wanted to add more information to accompany the file you could. You could also relate the document to some other table in the normal rdms style. We then ran this through the 2 parsers to generate the triggers and sequences that we need to keep track of timestamps and ids.
+
+Creating the form and report
+Next we need to create a form and a report. Like we did in class we can select the form with report option to do this. Once we have clicked on the create a form on a report, we have to select the fields we want to display. We chose to display everything so that we can see the metadata about the file once we uploaded it. For the report however you have to chose only the blob field as the input for the report (unless you have other information you want to include with the document or upload.). We do this so that the user can't edit the other file information details because we wanted to get it from the file metadata.
+
+If the table was created correctly it can recognize this as a file upload field and it should produce the correct form. At this point you should be able to upload files but will not get the meta-data. It should also include an option to download the newly uploaded file if you selected it during the setup process.
+
+Including the metadata
+The last step was to include metadata. If you are in the application builder you can go to the form edit page. On this page there should be an option to edit the attached file field on the form. You want to select the attach file field and not document id field!
+
+<15_form_object_to_edit.png>
+
+This page has settings for the file upload. There should be a section titled settings and here you can set the upload to save the metadata of the file. Use the column names that correspond to the data that you want to save. Make sure that you use uppercase or this will not work.
+
+<15_metadata_settings.png>
+
+It works!
+At this point you should be able to test it by uploading a file and seeing the file, the metadata about the file, and a link to download it.
+
+
+
+##Nice-to-have features##
+
+===
+(16) HTML5 video
+Here are the steps to embed html5 video:
+-- On the home page, create a region and select Static Content
+-- The modal will popup
+1. Change the Title and leave everything else as default and click next
+2. On the second page, where it says "Enter Region Source", that is where you will include an ifram link to embed youtube videos
+3. Click next and make sure the Output is HTML
+4. Click Finish
+
+
+===
+(17) Processes: Different people in an organization may be interested to know if information in the database is updated or if something new is added. The ,feature we implemented was a process on the page that enables emails to be sent upon certain actions. We added email support for all forms, ,such that emails would be sent out whenever “Save” or “Create” were clicked. Two different kinds of emails would be sent depending on if it ,was an update (Save was clicked) or a new row was added (Create was clicked). The processes are page specific, such that different people ,would receive emails depending on if it was the manager, department, project employee or project table or view that was altered.
+To fully work, this feature needs an actual email server as well, which we obviously don’t have connected to our application. Discussing
+this limitation with Professor Cannata, he told us that to implement the feature this much was enough.
+
+Steps to add the Send Email feature:
+- Under “Page Processing” in the edit window, find “Processes” and click create
+- Chose “Send Email” as the process type and click next
+- Fill in a name for the process. Point should already be “On Submit - after validations”. Click Next
+- Fill in the to and from email addresses and an appropriate subject and body text for this type of email. Email addresses should be valid.
+Change Send Immediately from “No” to “Yes” and click Next
+- If desired, fill in success and failure messages, otherwise just click Next
+- Choose the button condition. Email will be sent when this button is clicked. For a form, options should be Save, Delete and Create. Choose
+condition type to be “Always”. Click Create Process
+
+
+===
+(18) Implemented dynamic actions on the people page when creating a new person after selecting the type of person (project person or manager) the appropriate attributes will appear
+
+
+===
+(19) Used Theme Roller and a custom CSS to change the look and feel of the application
+In order to give us a head start at a different look, we went to Application Builder/Edit Application Properties/User Interface, and went in to edit the UI. We clicked on the Navigation Menu tab and changed the position to 'top' and changed the type of list to 'links list' with the following settings: use default template options checked, show badges checked, show right arrows checked, use bright hovers checked, display icons set to 'for top level items only,' and style set to 'actions.' We then ran the application and opened up Theme Roller (located in the bottom toolbar when in developer mode) and changed the style to gray as well as changed the color of the action columns. We saved this as a custom theme style and went back to the UI settings and replaced the default blue style with our newly created one. We then proceeded to create a local, custom CSS file that would add a background image to the pages (only seen if the region/form doesn't cover the whole page), change the color of some specific words to black, and change the font of title, page-title, and navigation bar words to Impact. To implement the CSS file, in the Application Builder we selected Shared Components and clicked on 'static application files'. We uploaded the CSS file and copied the reference it produced. We pasted this reference under the Cascading Style Sheets tab back in the UI settings.
+
+
+===
+(20) Add charts of varying types to pages with reports
+First, you must find the page you wish to add charts to (If you do not have a page you may create one).
+
+We chose to add charts to pages with reports, to do so we simply went to pages we wished to edit, then we added a region to contain our charts. We selected a region with no parent to allow it be underneath the existing report.
+
+The charts we chose were varied and diverse. For pie charts we selected defaults or added some fancy colors and when constructing the SQL we had to select two rows, one for label and one for the values of the pie chart. For bar charts they worked the same way; the SQL also had one column for labels and one column for the associated value. Lastly the gauge charge required a current value and a max value.
+
+After crafting the SQL for each of these we tweaked colors and alignment. Specifically for the two charts next to each other we had to specify the region for the second chart not to create a new row.
+
+
+===
+(21) Created a To-do entity which contains a date and a note and an interactive calendar that contains the To-do table, so when a to-do is made, it shows up on that date on the calendar.
+- We created a To-do entity which contains a date and a note. - Then we created an interactive calendar that contains the To-do table, so when a to-do is made, it shows up on that date on the calendar. - We created a page (Calendar) that holds the calendar and a form where a to-do can be created - And then we created another page (To-do) under calendar which holds an interactive report/form where all the to-do's are listed and can be created.
+
+
+===
+(22) Created a PL/SQL Dynamic Content Region and added in PL/SQL that selects
+
+
+===
+(23) 3d charts
+For this assignment we added charts providing some statistics of the SIM_Person table. To do this, we first needed to create some test data to work with. We used a spreadsheet program and filled in the first row with the table columns we were interested in. For our purposes, we used ‘person_id’, ‘name’, ‘type’, ‘birth_date’, ‘gender’, ‘city’, ‘state’, ‘salary’, and ‘bonus’. Then we created a SQL script from this data to bulk insert all of the rows. (See script at the bottom of this page.)
+
+After this, we went to the page we wanted to display our charts on. Initially we chose the People page, but after creating more charts we felt that this page became too cluttered with the interactive table and the charts. We decided to create a new blank page under the People navigation called ‘Charts’. From this page, we clicked on the + next to Regions to create a new region which brings up a modal, and selected ‘Chart’.
+
+We started with a simple pie chart of the gender distribution of our employees. We chose ‘Pie & Doughnut’ from the modal, and then ‘3D Pie’ for the style. Then we gave the region a title and clicked next, and named the chart and clicked next again. For the SQL, each column in the return statement acts as a portion of the pie. To create our chart of the gender distribution, we needed a result of 1 row with columns ‘male’, and ‘female’. We added the following SQL, saved our changes, and reloaded the ‘Charts’ page to see the new pie chart.
+select null link, 'Female' label, COUNT(PERSON_ID) value1
+from SIM_Person
+where GENDER = 'F'
+union
+select null link, 'Male' label, COUNT(PERSON_ID) value1
+from SIM_Person
+where GENDER = 'M'
+
+We decided to add another chart of the number of employees at each location. We clicked the link to create a region again and chose ‘Chart’. Then we chose ‘Column’ from the resulting modal and then picked the ‘3D Column’ for style. We gave the region a name and clicked next. Then we named the chart ‘Employees per Location’, the x-axis ‘Location’, and the y-axis ‘# of Employees’. For the SQL, each row in the results corresponds to a bar along the x-axis. The value of the ‘label’ column of each result row will be what displays under that bar. The extra column we return is the y value of the chart, which we can name whatever we want. We added the following SQL, saved our changes, and reloaded the ‘Charts’ page to see the new bar chart.
+select null link, CITY || ', ' || STATE label, COUNT(PERSON_ID) value1
+from SIM_PERSON
+group by CITY || ', ' || STATE
+
+After that we wanted to add another chart that displayed the average salary of each location grouped by gender. We repeated the same steps for the previous chart except we chose ‘Right’ for the ‘Show Legend’ option. For multiple bars to appear for the same x-axis value, just return extra columns. For this chart, we needed 1 row for each location with a column for average male salary and another column for female salary. We gave these columns meaningful names so that the legend would accurately describe what each bar meant. We added the following SQL, saved our changes, and reloaded the ‘Charts’ page to see the new multi-bar bar chart.
+select null link, CITY || ', ' || STATE label,
+    AVG(CASE WHEN GENDER = 'M' then salary end) Male,
+    AVG(case when gender = 'F' then salary end) Female
+from SIM_PERSON
+group by CITY || ', ' || STATE
+order by CITY || ', ' || STATE
+
+Lastly, we decided to add another chart that displayed the highest compensated employees, showing both their salary and their bonus stacked. We repeated the same steps as the other bar charts, but chose ‘3D Stacked Column’ as the style. This chart works the same as the multi-bar bar chart except that additional columns on each row are stacked on top of eachother. So we needed 1 row for each employee with their name (for the label), their salary, and their bonus. We added the following SQL, saved out changes, and reloaded the ‘Charts’ page to see the new stacked bar chart.
+select null as link, NAME, SALARY, BONUS
+from SIM_Person
+order by (SALARY + (case when BONUS is null then 0 else BONUS end)) desc
+
+Test Data SQL
+
+INSERT ALL
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Cassie','F','10/01/1990','Austin','TX','30000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Anna','F','02/02/1986','Austin','TX','35000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Becky','F','04/02/1987','Austin','TX','60000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Diana','F','08/05/1981','Seattle','WA','90000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Eleanor','F','12/08/1988','Seattle','WA','44000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Fiona','F','10/10/1992','Austin','TX','33000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Manager','Gabriella','F','11/01/1990','Palo Alto','CA','95000','5000')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Manager','Helen','F','05/02/1978','San Francisco','CA','110000','2000')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Isabella','F','12/25/1991','Seattle','WA','38000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Julia','F','06/06/1975','Houston','TX','45000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Kate','F','07/07/1977','Houston','TX','61000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Laura','F','05/03/1992','Portland','OR','80000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Manager','Mary','F','04/04/1989','Palo Alto','CA','120000','1000')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Manager','Nicole','F','02/06/1991','Palo Alto','CA','121000','20000')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Olivia','F','02/05/1985','San Francisco','CA','92000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Paula','F','08/15/1983','Houston','TX','70000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Quinn','F','04/19/1974','Houston','TX','32000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Rachel','F','10/10/1990','Seattle','WA','90000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Samantha','F','03/11/1968','Portland','OR','63000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Taylor','F','09/29/1994','Portland','OR','28000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Ursula','F','09/18/1985','Portland','OR','45000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Valerie','F','03/11/1979','Seattle','WA','76000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Wendy','F','01/14/1995','Seattle','WA','36000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Zoe','F','06/21/1986','Austin','TX','77000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Adam','M','06/14/1985','Austin','TX','99000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Brandon','M','03/16/1981','Austin','TX','64000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Manager','Carl','M','10/01/1990','Seattle','WA','80000','10000')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Manager','David','M','04/04/1986','Portland','OR','131000','50000')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Eric','M','01/05/1990','Seattle','WA','40000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Fred','M','02/14/1976','Houston','TX','112000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Greg','M','09/20/1984','San Francisco','CA','63000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Manager','Howard','M','11/11/1970','Houston','TX','128000','12000')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Jared','M','05/11/1989','Palo Alto','CA','41000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Kenny','M','02/01/1987','Palo Alto','CA','43000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Ian','M','03/12/1995','Houston','TX','28000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Luke','M','09/19/1991','Austin','TX','51000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Max','M','07/23/1988','Austin','TX','54000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Nathan','M','01/06/1982','Austin','TX','71000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Owen','M','03/17/1980','Portland','OR','78000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Peter','M','01/04/1989','Portland','OR','69000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Robert','M','06/24/1996','Houston','TX','42000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Steve','M','05/30/1992','San Francisco','CA','58000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Tony','M','01/31/1991','San Francisco','CA','80000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Vincent','M','12/05/1986','San Francisco','CA','78000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','William','M','07/17/1983','San Francisco','CA','79000','')
+INTO SIM_Person (TYPE,NAME,GENDER,BIRTH_DATE,CITY,STATE,SALARY,BONUS) VALUES ('Project Person','Zachary','M','06/13/1984','Austin','TX','25000','')
+SELECT * FROM dual;
+
+See ChartData.csv
+
+
+===
+(24) Map on People page
+We added the employee location map using the map chart region within APEX.
+
+The map chart allows users to aggregate data by location at a state, country, or worldwide level. We chose to use the United States as the total region and aggregate the project employees and managers by state. This allows us to easily view the total number of project employees and managers per state from the top level People page.
+
+The map chart returns data based on a simple SQL query, grouping and counting project employees and managers by state in our case.
+
+
+Steps to Creating Map Chart
+
+Step 1:
+Create a new region and select "Map Chart".
+
+<24_step1.jpg>
+
+Step 2:
+Select "United States of America". It is the default choice.
+
+<24_step2.jpg>
+
+Step 3:
+Select "United States" and "States".
+
+<24_step3.jpg>
+
+Step 4:
+In the Build Query box, enter the query as shown below.
+
+<24_step4.jpg>
+
+Step 5:
+Finish going through the region creator wizard.
+In the 'Region' section of the page, change 'Undefined Map Region' so that undefined regions do not have color.
+
+<24_step5.jpg>
+
+Step 6:
+While still in the 'Region' section, change the 'Refresh' option so that 'Asynchronous Update' is 'yes'.
+This allows for the map to be updated as new entries are entered without refreshing the page.
+
+<24_step6.jpg>
+
+Finish!
+
+
+===
+(25) Implemented the Apex Timer plugin. We assumed that it takes the average person 1-2 minutes to complete the information on the forms since they are relatively short. So, after 3 minutes have passed, the form turns blank (meaning that the form is hidden and we cannot see any information) and the user receives an alert stating the the form has been inactive for 3 minutes.
+
+We assumed that it takes the average person 1-2 minutes to complete the information on the forms since they are relatively short.
+
+So after 3 minutes have passed, the form turns blank (meaning that the form is hidden and we cannot see any information) and the user receives an alert stating the the form has been inactive for 3 minutes.
+
+We felt that this would be more like a security feature, so that no one would have time to copy down the information if the user leaves the form up with important information exposed. We also felt that the time limit is long enough so that the form does not go blank while the user is in the middle of filling out the form.
+
+To implement this, we downloaded the Apex timer plugin and added a copy of the plugin to our application.
+
+We then went to the pages that were modal dialogs and added a three new dynamic actions for each modal dialog page.
+
+First, we select the event that will trigger the timer, which the first timer is page load. Then we set the action as the timer initialized. Lastly, we set the expiration time as 3 minutes, or 180000 milliseconds.
+
+For the second and third dynamic actions, we select the event for when the timer expires. The action for the second dynamic action is chosen to hide the dialog. The third action is chosen as an alert and we typed in the message which will show up to tell the user that the dialog has closed.
+
+
+===
+(26) Needed to work on HW6 solution
+NOTE THIS IS NOT BASED ON HW4. HW4'S TABLES WERE NOT WORKING AND SINCE WE DID CAPTCHA WE NEEDED THE FORMS TO WORK. WE HAVE AN APP BASED ON HW4 BUT ONLY THE MANAGERS UNDER PEOPLE WORK BECAUSE THE SQL IS MESSED UP. THIS CURRENT VERSION WORKS HERE IS THE LINK TO THE HW4 BASED IMPLEMENTATION. https://apexea.oracle.com/pls/apex/f?p=14595:2:15884779878024::NO::: Pallavi Chamarthy and Justin Baiko We decided to do a captcha for forms and just incase there was extra credit we installed a rating plugin also. To install it all you need to do is find a plug in you like, then you download and unzip the file - inside should be an sql file that you import into apex. when you arrive at the apex main screen click application builder at the top then shared components and on the right should be a plug in link where you click and it allows you to import the sql. on the forms you wish to add the captcha click the feature an add an item scroll to plug ins and follow the rest of what the screen asks you when you get to the area where it says what region just click form of whatever region and you should be good to go. follow the same steps for the 5 star rating app.
+
+
+===
+(27) Added an authorization scheme to allow or disallow certain users to edit the contents of the database.,We created two users, layman and priveleged. layman only has permissions to view the data in the interactive reports, while priveleged has permissions to edit or add data to the database.
+We added an authorization scheme to allow or disallow certain users to edit the contents of the database.
+We created two users, layman and priveleged. layman only has permissions to view the data in the interactive reports, while priveleged has permissions to edit or add data to the database.
+APEX does not export users or user groups, so you will need to follow the steps in the first three sections below to import the webapp. Everything else should be ready when the webapp is imported.
+
+Creating users: Layman and Privleged
+====================================
+
+1    Click the Administration tab at the top right corner of the Application Builder. It looks like a person with a wrench.
+2    Select the "Manage Users and Groups" link.
+3    Click on the "Create Users" button.
+4    Enter a username, email address, and password.
+5    Click "Create User".
+6    Repeat for the second user. The names do not matter, but we named ours "layman" and "priveleged"
+
+Createing a group: Editors
+==========================
+
+1    On the same "Manage Users and Groups" page, click the "Groups" tab.
+2    Click "Create User Group".
+3    Give the group a name. We named ours "editors". This group will contain all users with editing permissions.
+
+Assigning users to groups
+=========================
+
+1    Go back to the "Users" tab.
+2    Select the user that you wish to editing priveleges.
+3    Scroll down to the bottom of the page, and add the user to the "editors" group.
+4    Click "Apply Changes"
+
+Create an APEX Authorization Scheme
+===================================
+
+1    Go to the application in the Application Builder.
+2    Follow the "Shared Components" link.
+3    Click "Authorization Schemes" under the "Security" section.
+4    Click "Create".
+5    Make sure "From Scratch" is selected, and click "Next".
+6    Give the scheme a name. We named ours "editors", and click "Create Authorization Scheme".
+7    Select the new scheme from the list.
+8    Under the "Authorization Scheme" section, in the "Scheme Type" select list choose "Is In Group".
+9    In the "Group Name" select list, choose the group you previously created.
+10    Click "Apply Changes".
+
+Requiring Authorization in the webapp
+=====================================
+
+1    Select a page on which you wish to require authorization, such as a page with an interactive report and editing capabilities.
+2    Go to that page in the Application Builder.
+3    Choose the interactive report for which you which to require authorization, and click the name of the report under the "Regions" section.
+4    Under the "Security" section, in the "Authorization Scheme" select list, choose the authorization scheme previously created.
+5    Click "Apply changes". This will cause the interactive report with editing controls to be invisible to users who are not authorized to edit.
+6    Create a new report on the page without editing controls. This is the report that will be displayed to unauthorized users.
+7    Click on the name of the report in the "Regions" section.
+8    Under the "Security" section, in the "Authorization Scheme" select list, choose the option that says "{Not <group name>}", where <group name> is the name of the group that has editing permissions. This specifies that any user not in the group will see this report.
+9    Click "Apply Changes".
+10    Go back to the application page in the Application Builder, and select the form corresponding to the report you just changed.
+11    Under the "Page" section, click the page name.
+12    Under the "Security" section, in the "Authroization Scheme" select list, choose the scheme that you defined previously. This will cause unauthorized users to receive an "Access Denied" message if they try to access the form page.
+13    Click "Apply Changes".
+14    Repeat for all pages on which you wish to use the authorization scheme.
+
+
+===
+(28) Create and Create Another- see "Create Manager" button on the Create Department Form
+
+Add a new button to Form on SIM_Manager (Page 8) and name it 'Create and Create Another'
+Set the button's Action to 'Redirect to Page in this Application' and set the target page number to be Page 8
+Use the default values for the rest of the button creation options and click 'Create Button'
+Edit the newly created button and change button's Action to 'Submit Page'
+Now clicking the button creates your entry and allows you to stay on the create page to create more entries
+Once you are finished creating Managers, you can exit the Form on SIM_Manager page, refresh the Managers page, and your newly created Managers will be displayed in the table
+
+
+===
+(29) Used Theme Roller to change the look and feel of the application
+Our new feature was modifying the application theme using the Theme Roller. This changes the look of the application and makes a much more visually appealing experience for the user. User interface is an underrated aspect of modern applications. We edited the color scheme as well as creating more rounded boxes. When running the application from the Application Builder, select Theme Roller from the menu bar at the bottom of the screen. From the Theme Roller menu that opens, modify the theme style options and colors as they are updated in real-time. When you are satisfied with your choice, save the new style as a new name. From the Application Builder, edit the application settings and edit your desktop theme style. Select the new style you have created from the drop-down list and apply changes. Enjoy your new theme.
+
+
+===
+(30) Added support for force directed graphs via a plug-in called "d3-force-apex-plugin
+This application adds support for force directed graphs via a plug-in called "d3-force-apex-plugin," details of which can be found here: D3 Force Plug-in (https://apex.oracle.com/pls/apex/f?p=18290:1::::::)
+
+The "organization" graph above shows the relationships between employees and managers.
+The "projects" graph above shows the relationships between projects and the people working on them.
+
+To reproduce in your own application:
+1. Import the plug-in (see link above) from your application builder main page (plug-ins are associated with applications, not global).
+2. Create a plug-ins region, select 'D3 - Force Layout' and NEXT through the remaining dialog pages (we used the default settings).
+3. Select the newly created region and expand the examples section to see the documentation and a sample query.
+4. Copy the sample query into the 'region source' area and modify to fit your data.
+5. In our case, for the "organization" graph we had to adapt the query to change the graph nodes to show employees and managers and then to create the links between the employees and managers. For the "projects" graph we had to UNION the person and project tables to create a uniform table of node types, then JOIN person->p2p->projects to get the links between persons and projects.
+
+
+===
+(31) Interactive views, forms, and charts for coordinating department and project budgets
+We a page for monitoring the organization's budget over multiple departments and projects. We created new views to extract the total cost of each department/project and the numbers of the various kinds of people working on them. This was interesting, because the way our database is structured makes getting these sums not totally straightforward, since managers and project persons are treated differently in relation to both departments and projects. Then, we created a new page to house this budget monitoring tool and created two main regions for it: one for departments and one for projects. Within each of these regions we created a graph to visually explain our data as well as a report to give more detailed information, including the number of people working in specific capacities. The result is an easy way to understand how the resources of the organization are spent as well as where the focus of the organization lies. Below are the views that we created: \n\n\n\n CREATE OR REPLACE FORCE VIEW "SIM_DEPT_BUDGET" ("Dept. Name", "Number of Projects", "Number of Managers", "Number of Employees", "Dept. Cost") AS SELECT dept.NAME as "Dept. Name", COUNT(project.PROJECT_ID) as "Number of Projects", COUNT(DISTINCT mgr.PERSON_ID) as "Number of Managers", COUNT(DISTINCT person.PERSON_ID) as "Number of Employees", SUM(mgr.SALARY)+SUM(person.SALARY) as "Dept. Cost" FROM SIM_DEPT dept left outer join SIM_PROJECT project on (project.SIM_DEPT_DEPT_ID = dept.DEPT_ID) join SIM_MANAGER mgr on (mgr.PERSON_ID = dept.SIM_PERSON_PERSON_ID) join SIM_PERSON person on (person.SIM_DEPT_DEPT_ID = dept.DEPT_ID) GROUP BY dept.NAME ; CREATE OR REPLACE FORCE VIEW "SIM_PROJECT_BUDGET" ("Project Name", "Number of Employees", "Project Cost") AS SELECT project.NAME as "Project Name", COUNT(pp.PER_PROJ) as "Number of Employees", SUM(person.SALARY) as "Project Cost" FROM SIM_PROJECT project join SIM_P2P pp on (project.PROJECT_ID = pp.SIM_PROJECT_PROJECT_ID) join SIM_PERSON person on (person.PERSON_ID = pp.SIM_PERSON_PERSON_ID) GROUP BY project.NAME ; -Terrence Maas, tjm2578, bigrfish -Eduardo Romero, er23799, ieduardo
+
+
+===
+(32) Added mobile interactivity to an existing application
+To add mobile interactivity to an existing application, you go to Edit Application Properties -> User Interface -> Add a new user interface and select Mobile. You can set a UI to "Auto Detect" and when you hit run application on a phone, the mobile app will show up. If you hit run application on a desktop, the desktop app will show up. The cruix of the problem lies in having to create a separate page with it's own set of regions for both the desktop and mobile versions of the site. You also have to make sure that the mobile and desktop versions start on the right kind of page, as the need to create separate pages also means needing to create separate page links.
+
+While it is possible to have mobile devices use the desktop view, this provides a sub optimal experience for mobile users as due to the smaller size, and therefore smaller screens, of mobile devices, many fucntions, like adding new entries to table, are difficult to do on mobile from this desktop view.
+
+Another problem is the state of the mobile features versus the desktop. While the desktop pages have fairly robust UI, this is not the case with mobile. The UI for mobile looks dated and doesn't have the same impact as desktop. Besides this, it is not possible to add mobile interactivity to an existing desktop application, despite having the option to do so. It must be established from the inception of the app whether mobile devices will be used, otherwise users run into problems such as we experienced like the navigation menu on mobile not working. However it much easier to add desktop functionality to a mobile application, as seen with this app.
+
+
+===
+(33) Added the Facebook comment plugin, which allows people to login with facebook and leave comments on a website's content.
+Extension:
+The Facebook comment plugin allows people to login with facebook and leave comments on a website's content. This seems like a useful feature on a website like ours that is used to interface with a database because users can suggest changes to the data or facilitate interaction with the database. For instance, if someone noticed that person X had been assigned to work on project Y but hadn't gotten work done, person Z might comment on the project assignments page and tag X to remind them what to work on.
+Process:
+To add Facebook comment sections to the pages, we used Oracle Apex's plugin feature. To get this plugin, we went to the unofficial plugin site apex plugins and downloaded the facebook plugin. Once downloaded, we nagivated to the shared components section, then plugin manager under 'other components' in Apex, and imported the plugin. After this, we went to the People page and clicked on the '+' on the right side for plugins. We added the plugin as a copy of the originally imported plugin to the project so we could use it anywhere in the application. Then, we clicked 'add region' and then plugin, and selected the facebook plugin. For each page, we made the plugin a subregion of the main form so it would look better. Then we added a title for the section (we just called it Facebook). We chose to keep the default width and number of posts, but one could change the number it displays if they wanted. In the next step, we decided to let the comments section show whether or not there is data/despite whatever the data is. However, you have the option of only showing it if certain criteria are met, which would be convenient in other applications. Finally, you add it to the page, and go check it out! We then repeated these steps for each page that had a form, and added some comments to make sure it works correctly.
+
+
+===
+(34) Added an "Undo" button to each page to remove the most recent entry to a table. To do this, we created a new button "Undo" and defined a dynamic action that removes the most recent entry to a table. However, typing of employees doesn't appear to be working.
+
+
+===
+(35) Implement features that would help the user receive helpful information about each,page of their project, as well as providing some failsafe features for when the reset button was,clicked to insure the user wanted to reset the table.
+We decided to implement features that would help the user receive helpful information about each
+page of their project, as well as providing some failsafe features for when the reset button was
+clicked to insure the user wanted to reset the table.
+First, we created all the buttons required to navigate to the pages we wanted to display. This
+included buttons for the HELP page on each of the already available pages, such as Persons,
+Manager, etc. This button would then send the user to the HELP page which would provide
+information on the data shown in each page, and could also consist of frequently asked questions
+and the answers to such questions in order to help the user as much as possible.
+For the failsafe options, we created a reset button that would reset all the data held within a table.
+To further build on this functionality, we added a failsafe/confirmation prompt when this button
+was clicked to insure the user actually wanted to reset all the data. We did this by adding a
+Dynamic Action to the button that would be utilized on button click. The user could then click
+“Cancel” on the propt box to stop the reset or “OK” to continue with the reset.
+
+
+===
+(36) plugin: Google reCaptcha for Forms
