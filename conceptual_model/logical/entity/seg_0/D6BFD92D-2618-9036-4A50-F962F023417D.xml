@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D6BFD92D-2618-9036-4A50-F962F023417D" name="Active_Employees">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-25 22:54:50 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="employee_id" id="FBF6AB5D-3449-18AE-5576-1A3C135C26ED">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-25 22:54:50 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<importedID>66C092DF-4C62-9543-0312-ED829EDD1851</importedID>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="employee_name" id="06C0B3CD-3D38-7074-58E5-E2E27A4170E9">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-25 22:54:50 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<importedID>D1C68951-4D2E-A3C8-F486-4F51451702EB</importedID>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+</Attribute>
+<Attribute name="employee_lab" id="37E15629-781D-26DB-4F04-25D04744F3A0">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-25 22:54:50 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<importedID>345DE2AC-7C2A-548C-DB62-F0FA57DC017A</importedID>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+</Attribute>
+<Attribute name="employee_division" id="69201940-8A7E-FE97-4C09-B0BB400687F7">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-25 22:54:50 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<importedID>750CD139-8358-0C26-9208-DA0A125F50AE</importedID>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+</Attribute>
+<Attribute name="employee_status" id="11EA460A-7A14-40B5-55F8-FEED5007C3C4">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-25 22:54:50 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<importedID>14C88B34-3B2F-E0E6-334A-19C2362C549F</importedID>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+</Attribute>
+<Attribute name="status_eff_date" id="4BE418EF-4908-168A-F300-3DCA4CEF2D38">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-25 22:54:50 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<importedID>5BF8F23C-95CE-0362-CAAE-B9E21858D20C</importedID>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FE2BC33D-9A6F-3A68-1196-7B0163010365" name="{entity} PK">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-25 22:54:50 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>FBF6AB5D-3449-18AE-5576-1A3C135C26ED</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

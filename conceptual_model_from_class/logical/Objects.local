@@ -1,7 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<oracle.dbtools.crest.model.design.logical.LogicalDesign>
-   <object objectType="Entity" objectID="BE436EB0-2346-1D4F-B10D-BABB22D02376" name="ARLNL_notification_list" seqName="seg_0"/>
-   <object objectType="Entity" objectID="8BCAB5B6-B91D-31A8-BCB0-E7EDDFC869F7" name="ARLNL_user" seqName="seg_0"/>
-   <object objectType="Relation" objectID="3799A0E2-A0BD-A01C-3945-678C2645BBEB" name="r1" seqName="seg_0"/>
-   <object objectType="Relation" objectID="CD899367-3A95-0061-B0BC-63572BE7D820" name="r2" seqName="seg_0"/>
-</oracle.dbtools.crest.model.design.logical.LogicalDesign>
