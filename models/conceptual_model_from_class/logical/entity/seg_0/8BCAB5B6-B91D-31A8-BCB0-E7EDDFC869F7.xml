@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8BCAB5B6-B91D-31A8-BCB0-E7EDDFC869F7" name="ARLNL_user">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-23 21:50:27 UTC</createdTime>
+<ownerDesignName>conceptual_model_from_class</ownerDesignName>
+<engineerTo>
+<item key="7D4F0456-A442-3EF3-CBC8-DB3F9CB499C9" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="user_id" id="8EB35593-DEA4-3B8D-D7A2-1D7BCB188812">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-23 21:50:37 UTC</createdTime>
+<ownerDesignName>conceptual_model_from_class</ownerDesignName>
+<engineerTo>
+<item key="7D4F0456-A442-3EF3-CBC8-DB3F9CB499C9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="status" id="D2105BCE-E92C-C5F0-803E-66464C9DFF2E">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-23 21:50:56 UTC</createdTime>
+<ownerDesignName>conceptual_model_from_class</ownerDesignName>
+<engineerTo>
+<item key="7D4F0456-A442-3EF3-CBC8-DB3F9CB499C9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D4034861-12D7-3D34-C655-9E0BF7C1D49C" name="{entity} PK">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-23 21:51:12 UTC</createdTime>
+<ownerDesignName>conceptual_model_from_class</ownerDesignName>
+<engineerTo>
+<item key="7D4F0456-A442-3EF3-CBC8-DB3F9CB499C9" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8EB35593-DEA4-3B8D-D7A2-1D7BCB188812</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
