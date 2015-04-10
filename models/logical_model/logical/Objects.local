@@ -1,12 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.logical.LogicalDesign>
-   <object objectType="Entity" objectID="F31A3FAB-D0F7-3928-17A2-66856C94866C" name="Active_Employees" seqName="seg_0"/>
-   <object objectType="Entity" objectID="AF03C953-1319-F55A-A430-400AEA2AB120" name="Notice_List_Members" seqName="seg_0"/>
-   <object objectType="Entity" objectID="F14025B7-79FD-2355-9CB7-BB04DD9EDB35" name="Notice_Lists" seqName="seg_0"/>
-   <object objectType="Entity" objectID="40FE7509-81D7-9B25-3FA8-A7CEEF40FB76" name="Files" seqName="seg_0"/>
-   <object objectType="Relation" objectID="4601E3A5-7C82-3146-4202-290310947607" name="r5" seqName="seg_0"/>
-   <object objectType="Relation" objectID="E62CDEEB-269B-8692-B73A-A13385FABD61" name="r3" seqName="seg_0"/>
-   <object objectType="Relation" objectID="84F139D8-142C-0236-C84F-96026EEA8336" name="r1" seqName="seg_0"/>
-   <object objectType="Relation" objectID="E6658FC3-225E-EA5D-1D7A-DD39D0FFFD6F" name="r2" seqName="seg_0"/>
-   <object objectType="Relation" objectID="7F8D21E0-2DB3-D8A4-6589-BC121674392C" name="r4" seqName="seg_0"/>
+   <object objectType="Entity" objectID="E9C03918-741A-2B8D-3961-13AD85060796" name="NL_file" seqName="seg_0"/>
+   <object objectType="Entity" objectID="C2E881ED-3738-5470-4325-B469F0A40FC9" name="NL_list_member" seqName="seg_0"/>
+   <object objectType="Entity" objectID="CE613C13-6A22-290C-723E-9AB8DAC8CFF2" name="NL_membership" seqName="seg_0"/>
+   <object objectType="Relation" objectID="7A3185FF-4CE7-57FC-28A8-5D25C37B6A0E" name="r12" seqName="seg_0"/>
+   <object objectType="Relation" objectID="E51CD070-5844-5489-DD0F-289435691F4D" name="r14" seqName="seg_0"/>
+   <object objectType="Relation" objectID="E1694BA5-7A7D-FFCA-2E17-E64416B1CFF8" name="r16" seqName="seg_0"/>
+   <object objectType="Relation" objectID="768DF96B-DE0D-B9DD-6DF3-EE983BDEC7E2" name="r17" seqName="seg_0"/>
 </oracle.dbtools.crest.model.design.logical.LogicalDesign>

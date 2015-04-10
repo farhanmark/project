@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C3C0F99D-08C3-A9DB-FA2A-DB6DC2CFF6FF" name="NL_list_member">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-10 18:41:10 UTC</createdTime>
+<generatorID>B3C0C03F-A4BD-1F76-B6E0-104BECD74389</generatorID>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="member_id" id="81F1C2B3-4137-B0B3-BCD8-D3FF41E3CA54">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-10 18:41:10 UTC</createdTime>
+<generatorID>9DFC1E88-A267-CB98-45CB-B2DA8A2F4F35</generatorID>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="type" id="4C45D325-DDF9-DAAD-4EC0-BAD83642C968">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-10 18:41:10 UTC</createdTime>
+<generatorID>7FE8A1D0-966A-E49C-D74B-CB80EDF9640C</generatorID>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="88237D40-92F6-2263-024B-50F05E7610CD" name="NL_list_member_PK">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-10 18:41:10 UTC</createdTime>
+<generatorID>68540608-37D1-6AEE-2CDB-97FC7F5031AF</generatorID>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="81F1C2B3-4137-B0B3-BCD8-D3FF41E3CA54"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

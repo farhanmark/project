@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A50B3111-9198-EC19-0A09-0F0BD5C08B82" name="Notice_Lists">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A50B3111-9198-EC19-0A09-0F0BD5C08B82" name="NL_notice_list">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
 <ownerDesignName>conceptual_model</ownerDesignName>
@@ -11,6 +11,7 @@
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
 <growthPercent>0</growthPercent>
 <growthType>Year</growthType>
+<hierarchicalParent>B3C0C03F-A4BD-1F76-B6E0-104BECD74389</hierarchicalParent>
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>

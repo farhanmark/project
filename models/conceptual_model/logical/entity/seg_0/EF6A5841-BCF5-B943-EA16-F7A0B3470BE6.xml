@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="EF6A5841-BCF5-B943-EA16-F7A0B3470BE6" name="Files">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="EF6A5841-BCF5-B943-EA16-F7A0B3470BE6" name="NL_file">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 23:33:21 UTC</createdTime>
 <ownerDesignName>conceptual_model</ownerDesignName>
@@ -39,6 +39,44 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>255</dataTypeSize>
 </Attribute>
+<Attribute name="mimetype" id="1B9652CC-8D50-F95A-3920-4003AF6B767B">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-10 18:29:45 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="char_set" id="8326C89C-D4BE-9C05-6E7A-BF2643E96564">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-10 18:30:15 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="file_data" id="DA586D8F-143B-BAAC-F2C1-D0500A510988">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-25 23:58:44 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+</Attribute>
 <Attribute name="comments" id="F69F83E3-252F-A73C-2981-A22FB5E5BBC7">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 23:34:17 UTC</createdTime>
@@ -52,21 +90,9 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>4000</dataTypeSize>
 </Attribute>
-<Attribute name="created" id="B0F9BE67-7A46-94B1-B5FB-BB2FFD30F608">
+<Attribute name="tag" id="D67BA2FA-878D-7A10-D57B-DB70905E31B3">
 <createdBy>mark</createdBy>
-<createdTime>2015-03-25 23:34:46 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
-<engineerTo>
-<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-</Attribute>
-<Attribute name="created_by" id="9BAC9C8E-1AEE-AC3D-1B47-FBF383BA8223">
-<createdBy>mark</createdBy>
-<createdTime>2015-03-25 23:34:58 UTC</createdTime>
+<createdTime>2015-04-10 18:30:55 UTC</createdTime>
 <ownerDesignName>conceptual_model</ownerDesignName>
 <engineerTo>
 <item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
@@ -76,6 +102,30 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="email_id" id="79C6F660-5991-A5FE-E82B-A42679A97F6E">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-10 18:32:03 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="agreement_id" id="85B70895-ED21-AC8A-A876-7C32787B3771">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-10 18:32:22 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 </Attribute>
 <Attribute name="file_size" id="9E57A075-2004-63B2-0A48-61E0B267D419">
 <createdBy>mark</createdBy>
@@ -89,9 +139,9 @@
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 </Attribute>
-<Attribute name="download" id="21BB4891-7931-E7FD-0677-8937C15FCADF">
+<Attribute name="agree_app_id" id="42EC8F14-F7BF-6776-F3FC-08FCD593706B">
 <createdBy>mark</createdBy>
-<createdTime>2015-03-25 23:35:36 UTC</createdTime>
+<createdTime>2015-04-10 18:33:41 UTC</createdTime>
 <ownerDesignName>conceptual_model</ownerDesignName>
 <engineerTo>
 <item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
@@ -99,7 +149,7 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 </Attribute>
 <Attribute name="employee_id" id="1622F2C3-33D2-B5C6-82F8-3C4842FBA7AA">
 <createdBy>mark</createdBy>
@@ -114,9 +164,9 @@
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 </Attribute>
-<Attribute name="file" id="DA586D8F-143B-BAAC-F2C1-D0500A510988">
+<Attribute name="created" id="B0F9BE67-7A46-94B1-B5FB-BB2FFD30F608">
 <createdBy>mark</createdBy>
-<createdTime>2015-03-25 23:58:44 UTC</createdTime>
+<createdTime>2015-03-25 23:34:46 UTC</createdTime>
 <ownerDesignName>conceptual_model</ownerDesignName>
 <engineerTo>
 <item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
@@ -124,7 +174,19 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT029</logicalDatatype>
+<logicalDatatype>LOGDT007</logicalDatatype>
+</Attribute>
+<Attribute name="download" id="21BB4891-7931-E7FD-0677-8937C15FCADF">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-25 23:35:36 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

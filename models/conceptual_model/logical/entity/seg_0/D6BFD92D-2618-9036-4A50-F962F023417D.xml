@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D6BFD92D-2618-9036-4A50-F962F023417D" name="Active_Employees">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D6BFD92D-2618-9036-4A50-F962F023417D" name="NL_active_employee">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
 <ownerDesignName>conceptual_model</ownerDesignName>
@@ -11,6 +11,7 @@
 <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
 <growthPercent>0</growthPercent>
 <growthType>Year</growthType>
+<hierarchicalParent>B3C0C03F-A4BD-1F76-B6E0-104BECD74389</hierarchicalParent>
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
@@ -27,7 +28,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 </Attribute>
-<Attribute name="employee_name" id="06C0B3CD-3D38-7074-58E5-E2E27A4170E9">
+<Attribute name="first_name" id="06C0B3CD-3D38-7074-58E5-E2E27A4170E9">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
 <ownerDesignName>conceptual_model</ownerDesignName>
@@ -41,7 +42,33 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>30</dataTypeSize>
 </Attribute>
-<Attribute name="employee_lab" id="37E15629-781D-26DB-4F04-25D04744F3A0">
+<Attribute name="middle_name" id="68F6F9C0-248D-14B8-34DE-D9381B4BF803">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-10 18:18:25 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="last_name" id="22567C8F-54CA-0C9C-6EE8-C05C6F186BFE">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-10 18:18:53 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="lab" id="37E15629-781D-26DB-4F04-25D04744F3A0">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
 <ownerDesignName>conceptual_model</ownerDesignName>
@@ -55,7 +82,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>4</dataTypeSize>
 </Attribute>
-<Attribute name="employee_division" id="69201940-8A7E-FE97-4C09-B0BB400687F7">
+<Attribute name="division" id="69201940-8A7E-FE97-4C09-B0BB400687F7">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
 <ownerDesignName>conceptual_model</ownerDesignName>
@@ -69,7 +96,19 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>4</dataTypeSize>
 </Attribute>
-<Attribute name="employee_status" id="11EA460A-7A14-40B5-55F8-FEED5007C3C4">
+<Attribute name="network_act_id" id="E1B10EC4-9BBA-83C5-3320-92963CDE4D83">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-10 19:03:39 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="status" id="11EA460A-7A14-40B5-55F8-FEED5007C3C4">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
 <ownerDesignName>conceptual_model</ownerDesignName>
