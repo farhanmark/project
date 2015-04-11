@@ -103,45 +103,9 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>255</dataTypeSize>
 </Attribute>
-<Attribute name="email_id" id="79C6F660-5991-A5FE-E82B-A42679A97F6E">
-<createdBy>mark</createdBy>
-<createdTime>2015-04-10 18:32:03 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
-<engineerTo>
-<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-</Attribute>
-<Attribute name="agreement_id" id="85B70895-ED21-AC8A-A876-7C32787B3771">
-<createdBy>mark</createdBy>
-<createdTime>2015-04-10 18:32:22 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
-<engineerTo>
-<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-</Attribute>
 <Attribute name="file_size" id="9E57A075-2004-63B2-0A48-61E0B267D419">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 23:35:24 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
-<engineerTo>
-<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-</Attribute>
-<Attribute name="agree_app_id" id="42EC8F14-F7BF-6776-F3FC-08FCD593706B">
-<createdBy>mark</createdBy>
-<createdTime>2015-04-10 18:33:41 UTC</createdTime>
 <ownerDesignName>conceptual_model</ownerDesignName>
 <engineerTo>
 <item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
