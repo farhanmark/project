@@ -23,7 +23,7 @@ CREATE TABLE NL_file
     tag                 VARCHAR2 (255) ,
     file_size           INTEGER ,
     created             DATE ,
-    download            VARCHAR2 ,
+    download            VARCHAR2 (255),
     NL_member_member_id INTEGER NOT NULL
   ) ;
 ALTER TABLE NL_file ADD CONSTRAINT NL_file_PK PRIMARY KEY ( file_id ) ;
