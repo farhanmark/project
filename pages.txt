@@ -1,0 +1,32 @@
+Random file upload page
+    - upload and download files
+
+list membership page
+    - add users and lists to list
+        - shuttle
+    - search for users
+        - search bar
+
+    - group select lists
+
+list maintainance
+    - clone membership
+    - remove from list
+    - employee list membership
+    - region display selector to switch between list maintainance and management
+
+list management
+    - create/edit/remove lists
+
+views for
+    - lists
+    - users
+    - admin
+
+    - tree
+
+Home
+    - put a shortcut to this page from every other page
+
+--
+Buttons that return to page correctly
