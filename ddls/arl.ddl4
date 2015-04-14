@@ -47,6 +47,7 @@ BEGIN
         sysdate(),
         :NEW.LIST_OWNER) ;
 END;
+/
 
 create view arl_active_emp as
     select member_id as employee_id, first_name, middle_name, last_name
