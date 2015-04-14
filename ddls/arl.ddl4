@@ -6,48 +6,47 @@ drop view arl_user;
 create view arl_notice_list as
     select member_id as list_seq_id, list_name, division as ownership_div_code,
            list_description, external_view_name, creation_date,
-           list_status, statis_eff_date, employee_id as list_owner
+           status as list_status, status_eff_date, nl_member_member_id as list_owner
     from NL_member
     where type = 'NOTICE LIST';
 
 create or replace trigger notice_list_trigger
-    instead of insert on arl_notice_list
+    INSTEAD OF insert ON ARL_NOTICE_LIST
     for each row
 BEGIN
     insert into nl_member(
-        member_id,
-        type,
-        first_name,
-        middle_name,
-        last_name,
-        lab,
-        division,
-        network_act_id,
-        status,
-        status_eff_date,
-        list_name,
-        list_description,
-        external_view_name,
-        creation_date,
-        member_id1)
+        MEMBER_ID,
+        TYPE,
+        FIRST_NAME,
+        MIDDLE_NAME,
+        LAST_NAME,
+        LAB,
+        DIVISION,
+        NETWORK_ACT_ID,
+        STATUS,
+        STATUS_EFF_DATE,
+        LIST_NAME,
+        LIST_DESCRIPTION,
+        EXTERNAL_VIEW_NAME,
+        CREATION_DATE,
+        NL_MEMBER_MEMBER_ID)
     VALUES (
-        :new.member_id,
+        :NEW.LIST_SEQ_ID,
         'NOTICE LIST',
         null,
         null,
         null,
         null,
-        :new.division,
+        :NEW.OWNERSHIP_DIV_CODE,
         null,
         'ACTIVE',
         sysdate(),
-        :new.list_name,
-        :new.list_description,
-        :new.external_view_name,
+        :NEW.LIST_NAME,
+        :NEW.LIST_DESCRIPTION,
+        :NEW.EXTERNAL_VIEW_NAME,
         sysdate(),
-        :new.member_id1) ;
+        :NEW.LIST_OWNER) ;
 END;
-/
 
 create view arl_active_emp as
     select member_id as employee_id, first_name, middle_name, last_name
