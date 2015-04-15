@@ -24,7 +24,7 @@ CREATE TABLE NL_file
     file_size           INTEGER ,
     created             DATE ,
     download            VARCHAR2 (255),
-    NL_member_member_id INTEGER NOT NULL
+    NL_member_member_id INTEGER
   ) ;
 ALTER TABLE NL_file ADD CONSTRAINT NL_file_PK PRIMARY KEY ( file_id ) ;
 
@@ -44,7 +44,7 @@ CREATE TABLE NL_member
     list_description    VARCHAR2 (3500) ,
     external_view_name  VARCHAR2 (50) ,
     creation_date       DATE ,
-    NL_member_member_id INTEGER NOT NULL
+    NL_member_member_id INTEGER
   ) ;
 ALTER TABLE NL_member ADD CONSTRAINT NL_member_PK PRIMARY KEY ( member_id ) ;
 
