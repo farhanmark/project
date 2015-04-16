@@ -1,68 +1,53 @@
-drop view arl_notice_list;
-drop view arl_active_emp;
-drop view arl_admin;
-drop view arl_user;
-
-create view arl_notice_list as
-    select member_id as list_seq_id, list_name, division as ownership_div_code,
-           list_description, external_view_name, creation_date,
-           status as list_status, status_eff_date, nl_member_member_id as list_owner
-    from NL_member
-    where type = 'NOTICE LIST';
-
 create or replace trigger notice_list_trigger
-    INSTEAD OF insert ON ARL_NOTICE_LIST
+    AFTER insert ON NL_LIST
     for each row
 BEGIN
-    insert into nl_member(
+    insert into NL_MEMBER(
         MEMBER_ID,
         TYPE,
-        FIRST_NAME,
-        MIDDLE_NAME,
-        LAST_NAME,
-        LAB,
-        DIVISION,
-        NETWORK_ACT_ID,
-        STATUS,
-        STATUS_EFF_DATE,
-        LIST_NAME,
-        LIST_DESCRIPTION,
-        EXTERNAL_VIEW_NAME,
-        CREATION_DATE,
-        NL_MEMBER_MEMBER_ID)
+        NL_ACTIVE_EMP_EMPLOYEE_ID,
+        NL_LIST_LIST_SEQ_ID)
     VALUES (
-        :NEW.LIST_SEQ_ID,
+        NL_MEMBER_SEQ.nextval,
         'NOTICE LIST',
         null,
-        null,
-        null,
-        null,
-        :NEW.OWNERSHIP_DIV_CODE,
-        null,
-        'ACTIVE',
-        sysdate(),
-        :NEW.LIST_NAME,
-        :NEW.LIST_DESCRIPTION,
-        :NEW.EXTERNAL_VIEW_NAME,
-        sysdate(),
-        :NEW.LIST_OWNER) ;
+        :NEW.LIST_SEQ_ID) ;
 END;
 /
 
-create view arl_active_emp as
-    select member_id as employee_id, first_name, middle_name, last_name
-    lab, division , network_act_id, status, status_eff_date
-    from NL_member
-    where type = 'ACTIVE EMP';
+create or replace trigger active_emp_trigger
+    AFTER insert ON NL_ACTIVE_EMP
+    for each row
+BEGIN
+    insert into NL_MEMBER(
+        MEMBER_ID,
+        TYPE,
+        NL_ACTIVE_EMP_EMPLOYEE_ID,
+        NL_LIST_LIST_SEQ_ID)
+    VALUES (
+        NL_ACTIVE_EMP_SEQ.nextval,
+        'ACTIVE EMP',
+        :NEW.EMPLOYEE_ID,
+        null) ;
+END;
+/
 
-create view arl_admin as
-    select member_id as employee_id, first_name, middle_name, last_name
-    lab, division , network_act_id, status, status_eff_date
-    from NL_member
-    where type = 'ADMIN';
+create or replace trigger emp_status_trigger
+    BEFORE insert ON NL_ACTIVE_EMP
+    for each row
+BEGIN
+    select 'A', sysdate()
+    into :NEW.STATUS, :NEW.STATUS_EFF_DATE
+    from DUAL;
+END;
+/
 
-create view arl_user as
-    select member_id as employee_id, first_name, middle_name, last_name
-    lab, division , network_act_id, status, status_eff_date
-    from NL_member
-    where type = 'USER';
+create or replace trigger list_status_trigger
+    BEFORE insert ON NL_LIST
+    for each row
+BEGIN
+    select sysdate(), 'A', sysdate()
+    into :NEW.CREATION_DATE, :NEW.LIST_STATUS, :NEW.STATUS_EFF_DATE
+    from DUAL;
+END;
+/
