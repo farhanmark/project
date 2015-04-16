@@ -22,6 +22,7 @@ TODO
 - rerun parser files
 - use existing trigger for form on `nl_file`
 - use `file_data` field properties on form to fill in the file metadata
+- add "NOT" user type
 
 
 Pages in our Webapp (subject to change)
