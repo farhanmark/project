@@ -24,7 +24,7 @@ CREATE TABLE NL_active_emp
     last_name           VARCHAR2 (255) ,
     lab                 VARCHAR2 (255) ,
     division            VARCHAR2 (255) ,
-    isStdUser           INTEGER ,
+    isStdUser           VARCHAR2 (255) ,
     isAdmin             VARCHAR2 (255) ,
     network_act_id      INTEGER ,
     status              VARCHAR2 (255) ,
