@@ -40,7 +40,7 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
+<dataTypeSize>255</dataTypeSize>
 </Attribute>
 <Attribute name="middle_name" id="68F6F9C0-248D-14B8-34DE-D9381B4BF803">
 <createdBy>mark</createdBy>
@@ -80,7 +80,7 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>4</dataTypeSize>
+<dataTypeSize>255</dataTypeSize>
 </Attribute>
 <Attribute name="division" id="69201940-8A7E-FE97-4C09-B0BB400687F7">
 <createdBy>mark</createdBy>
@@ -94,7 +94,20 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>4</dataTypeSize>
+<dataTypeSize>255</dataTypeSize>
+</Attribute>
+<Attribute name="isStdUser" id="2D206006-731A-6D95-4DDD-7663AF71F3CD">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-16 22:15:28 UTC</createdTime>
+<ownerDesignName>conceptual_model</ownerDesignName>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
 </Attribute>
 <Attribute name="isAdmin" id="15B83FD6-0058-06C3-DBF4-1E289BC98546">
 <createdBy>mark</createdBy>
@@ -107,7 +120,7 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
+<dataTypeSize>255</dataTypeSize>
 </Attribute>
 <Attribute name="network_act_id" id="E1B10EC4-9BBA-83C5-3320-92963CDE4D83">
 <createdBy>mark</createdBy>
@@ -133,7 +146,7 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
+<dataTypeSize>255</dataTypeSize>
 </Attribute>
 <Attribute name="status_eff_date" id="4BE418EF-4908-168A-F300-3DCA4CEF2D38">
 <createdBy>mark</createdBy>

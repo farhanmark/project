@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B3C0C03F-A4BD-1F76-B6E0-104BECD74389" name="NL_list_member">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B3C0C03F-A4BD-1F76-B6E0-104BECD74389" name="NL_member">
 <createdBy>mark</createdBy>
 <createdTime>2015-04-10 18:14:46 UTC</createdTime>
 <ownerDesignName>logical_model2</ownerDesignName>
 <engineerTo>
-<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,7 +20,7 @@
 <createdTime>2015-04-10 18:15:00 UTC</createdTime>
 <ownerDesignName>logical_model2</ownerDesignName>
 <engineerTo>
-<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -31,7 +31,7 @@
 <createdTime>2015-04-10 18:15:21 UTC</createdTime>
 <ownerDesignName>logical_model2</ownerDesignName>
 <engineerTo>
-<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -45,7 +45,7 @@
 <generatorID>62FA421D-BE27-AE7B-081F-62E21304A054</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <engineerTo>
-<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>FBF6AB5D-3449-18AE-5576-1A3C135C26ED</referedAttribute>
@@ -59,7 +59,7 @@
 <generatorID>2DE41580-E943-9A72-C034-613D9E1AD76B</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <engineerTo>
-<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>B5C67DC0-C2A9-C041-E842-07E07DE35D74</referedAttribute>
@@ -74,7 +74,7 @@
 <createdTime>2015-04-10 18:15:12 UTC</createdTime>
 <ownerDesignName>logical_model2</ownerDesignName>
 <engineerTo>
-<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

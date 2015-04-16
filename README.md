@@ -2,6 +2,7 @@ A note about models
 ===================
 - Our conceptual and logical models are in the models directory
 - The conceptual model from class is also there, but we only used it as a starting point
+- Our first logical model is `logical_model`, and it was abandoned in favor of a model that did not mangle the active employees table.
 
 
 Steps taken to ensure fullfillment of must-haves and nice-to-haves
