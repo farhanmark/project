@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D6BFD92D-2618-9036-4A50-F962F023417D" name="NL_active_employee">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A50B3111-9198-EC19-0A09-0F0BD5C08B82" name="NL_notice_list">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
+<ownerDesignName>logical_model2</ownerDesignName>
 <engineerTo>
 <item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
 </engineerTo>
@@ -16,11 +16,11 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="employee_id" id="FBF6AB5D-3449-18AE-5576-1A3C135C26ED">
+<Attribute name="list_seq_id" id="B5C67DC0-C2A9-C041-E842-07E07DE35D74">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
-<importedID>66C092DF-4C62-9543-0312-ED829EDD1851</importedID>
+<ownerDesignName>logical_model2</ownerDesignName>
+<importedID>1E12B51C-8420-7143-3C6B-24EFAECEF0C3</importedID>
 <engineerTo>
 <item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
 </engineerTo>
@@ -28,11 +28,11 @@
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 </Attribute>
-<Attribute name="first_name" id="06C0B3CD-3D38-7074-58E5-E2E27A4170E9">
+<Attribute name="list_name" id="0199F2B3-1B9F-14F2-B6A5-FD6A18DC78A5">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
-<importedID>D1C68951-4D2E-A3C8-F486-4F51451702EB</importedID>
+<ownerDesignName>logical_model2</ownerDesignName>
+<importedID>F377BC25-0D01-0555-C295-57912528E460</importedID>
 <engineerTo>
 <item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
 </engineerTo>
@@ -40,39 +40,13 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
+<dataTypeSize>40</dataTypeSize>
 </Attribute>
-<Attribute name="middle_name" id="68F6F9C0-248D-14B8-34DE-D9381B4BF803">
-<createdBy>mark</createdBy>
-<createdTime>2015-04-10 18:18:25 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
-<engineerTo>
-<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>255</dataTypeSize>
-</Attribute>
-<Attribute name="last_name" id="22567C8F-54CA-0C9C-6EE8-C05C6F186BFE">
-<createdBy>mark</createdBy>
-<createdTime>2015-04-10 18:18:53 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
-<engineerTo>
-<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>255</dataTypeSize>
-</Attribute>
-<Attribute name="lab" id="37E15629-781D-26DB-4F04-25D04744F3A0">
+<Attribute name="ownership_div_code" id="4AB0D444-CC1A-6957-9CBA-5EFB8A13780A">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
-<importedID>345DE2AC-7C2A-548C-DB62-F0FA57DC017A</importedID>
+<ownerDesignName>logical_model2</ownerDesignName>
+<importedID>EE330CA0-BE01-9460-9903-467EEAEF4F8C</importedID>
 <engineerTo>
 <item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
 </engineerTo>
@@ -82,11 +56,11 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>4</dataTypeSize>
 </Attribute>
-<Attribute name="division" id="69201940-8A7E-FE97-4C09-B0BB400687F7">
+<Attribute name="list_description" id="7F28F630-18A0-D00B-55BA-5683692E0E4F">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
-<importedID>750CD139-8358-0C26-9208-DA0A125F50AE</importedID>
+<ownerDesignName>logical_model2</ownerDesignName>
+<importedID>3FE1EEDC-4A55-93DA-6718-A6E741B4BD66</importedID>
 <engineerTo>
 <item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
 </engineerTo>
@@ -94,12 +68,13 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>4</dataTypeSize>
+<dataTypeSize>3500</dataTypeSize>
 </Attribute>
-<Attribute name="isAdmin" id="15B83FD6-0058-06C3-DBF4-1E289BC98546">
+<Attribute name="external_view_name" id="92319C94-35F8-BB95-96D1-1665A3FBC1E7">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-16 00:46:46 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
+<createdTime>2015-03-25 22:54:50 UTC</createdTime>
+<ownerDesignName>logical_model2</ownerDesignName>
+<importedID>29541FA7-0EB5-6110-5330-371D464A9D28</importedID>
 <engineerTo>
 <item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
 </engineerTo>
@@ -107,39 +82,13 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
+<dataTypeSize>50</dataTypeSize>
 </Attribute>
-<Attribute name="network_act_id" id="E1B10EC4-9BBA-83C5-3320-92963CDE4D83">
-<createdBy>mark</createdBy>
-<createdTime>2015-04-10 19:03:39 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
-<engineerTo>
-<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-</Attribute>
-<Attribute name="status" id="11EA460A-7A14-40B5-55F8-FEED5007C3C4">
+<Attribute name="creation_date" id="47D8C185-2534-1AFE-91E4-E1254731FBA1">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
-<importedID>14C88B34-3B2F-E0E6-334A-19C2362C549F</importedID>
-<engineerTo>
-<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-</Attribute>
-<Attribute name="status_eff_date" id="4BE418EF-4908-168A-F300-3DCA4CEF2D38">
-<createdBy>mark</createdBy>
-<createdTime>2015-03-25 22:54:50 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
-<importedID>5BF8F23C-95CE-0362-CAAE-B9E21858D20C</importedID>
+<ownerDesignName>logical_model2</ownerDesignName>
+<importedID>700D0B8E-B220-2BC8-6396-3C4EF0C61549</importedID>
 <engineerTo>
 <item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
 </engineerTo>
@@ -148,18 +97,74 @@
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 </Attribute>
-</attributes>
-<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="FE2BC33D-9A6F-3A68-1196-7B0163010365" name="{entity} PK">
+<Attribute name="list_status" id="D4B37C60-22F4-9CB6-38BC-487BE5FDFF46">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
-<ownerDesignName>conceptual_model</ownerDesignName>
+<ownerDesignName>logical_model2</ownerDesignName>
+<importedID>500791D4-3412-4798-8FA1-192FE469D75D</importedID>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+</Attribute>
+<Attribute name="status_eff_date" id="ABE08153-ADAA-B43B-303C-BBACEA484113">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-25 22:54:50 UTC</createdTime>
+<ownerDesignName>logical_model2</ownerDesignName>
+<importedID>4669FF9E-9CA1-EDFF-8726-2E441D4B927A</importedID>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+</Attribute>
+<Attribute name="employee_id" id="6F721192-85B0-4C02-D40B-9BF211B0236A">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-25 22:54:50 UTC</createdTime>
+<generatorID>1CEE6283-9501-E938-934A-FA4509966FFF</generatorID>
+<ownerDesignName>logical_model2</ownerDesignName>
+<importedID>BA6F9694-5574-C088-14BC-FA8A40879759</importedID>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>FBF6AB5D-3449-18AE-5576-1A3C135C26ED</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+<Attribute name="member_id" id="BC096BAE-DA07-0141-CC90-71DAA5AC8D7F">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-16 00:58:31 UTC</createdTime>
+<generatorID>2DE41580-E943-9A72-C034-613D9E1AD76B</generatorID>
+<ownerDesignName>logical_model2</ownerDesignName>
+<engineerTo>
+<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>9DFC1E88-A267-CB98-45CB-B2DA8A2F4F35</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9769D21E-A3F8-F84A-3971-C48806A2938F" name="{entity} PK">
+<createdBy>mark</createdBy>
+<createdTime>2015-03-25 22:54:50 UTC</createdTime>
+<ownerDesignName>logical_model2</ownerDesignName>
 <engineerTo>
 <item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>FBF6AB5D-3449-18AE-5576-1A3C135C26ED</attributeRef>
+<attributeRef>B5C67DC0-C2A9-C041-E842-07E07DE35D74</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

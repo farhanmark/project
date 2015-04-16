@@ -1,5 +1,0 @@
-Steps taken to ensure fullfillment of must-haves and nice-to-haves
-------------------------------------------------------------------
-- Went through all must haves and determined approximately what was needed from home page instructions
-- Added the Files table for file upload/download
-- Plan to create views to accomodate any other needs, such as trees.

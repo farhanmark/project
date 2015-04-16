@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="F361F5C0-3C39-BCD2-BB49-7173B889B470" name="r5" seqName="seg_0"/>
+   <object objectType="Table" objectID="3C63937A-D398-A623-AFE6-9B78D9203F9B" name="NL_file" seqName="seg_0"/>
+   <object objectType="Table" objectID="6EF6B413-B835-E662-C10E-3FF5DB9C1674" name="NL_notice_list" seqName="seg_0"/>
+   <object objectType="Table" objectID="7D065ED8-9AF5-AA66-1265-7DDAC9163063" name="NL_active_employee" seqName="seg_0"/>
+   <object objectType="Table" objectID="C3C0F99D-08C3-A9DB-FA2A-DB6DC2CFF6FF" name="NL_list_member" seqName="seg_0"/>
+   <object objectType="Table" objectID="9E2FA984-265A-7947-B4AB-4A79D1CB1C17" name="NL_user" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="1FD600A9-20ED-83B1-9B34-8972247C84E7" name="NL_active_employee_NL_list_member_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="95905A99-CEF8-FBA6-E5AB-A20E4684618C" name="FK_ASS_6" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="858A225B-CC25-998D-1DD0-0DD8BC968CA0" name="NL_notice_list_NL_active_employee_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="DF57DCD0-5EE1-EC39-B263-530DDCD0ECB8" name="FK_ASS_7" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="A170AC71-4976-3D36-B850-EE37549013ED" name="NL_file_NL_active_employee_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="0BE76C95-530A-6097-E7C3-AA8B31A658AB" name="NL_notice_list_NL_list_member_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="5B0586CC-7EA9-5424-29F6-4BAE59E02F7E" name="NL_user_NL_active_employee_FK" seqName="seg_0"/>
+   <object objectType="FKArc" objectID="E56A43EF-76FB-4CBC-EA98-C1594A2F0DD6" name="FKArc_1" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>
