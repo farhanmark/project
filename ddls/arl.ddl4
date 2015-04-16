@@ -46,8 +46,8 @@ create or replace trigger list_status_trigger
     BEFORE insert ON NL_LIST
     for each row
 BEGIN
-    select sysdate(), 'A', sysdate()
-    into :NEW.CREATION_DATE, :NEW.LIST_STATUS, :NEW.STATUS_EFF_DATE
+    select 'A', sysdate()
+    into :NEW.LIST_STATUS, :NEW.STATUS_EFF_DATE
     from DUAL;
 END;
 /
