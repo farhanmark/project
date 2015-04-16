@@ -4,7 +4,7 @@
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
 <ownerDesignName>logical_model2</ownerDesignName>
 <engineerTo>
-<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
+<item key="03B7B9CB-BBA3-3299-5BC4-0E01B1BA0011" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -21,7 +21,7 @@
 <ownerDesignName>logical_model2</ownerDesignName>
 <importedID>1E12B51C-8420-7143-3C6B-24EFAECEF0C3</importedID>
 <engineerTo>
-<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
+<item key="03B7B9CB-BBA3-3299-5BC4-0E01B1BA0011" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -33,7 +33,7 @@
 <ownerDesignName>logical_model2</ownerDesignName>
 <importedID>F377BC25-0D01-0555-C295-57912528E460</importedID>
 <engineerTo>
-<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
+<item key="03B7B9CB-BBA3-3299-5BC4-0E01B1BA0011" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -47,7 +47,7 @@
 <ownerDesignName>logical_model2</ownerDesignName>
 <importedID>EE330CA0-BE01-9460-9903-467EEAEF4F8C</importedID>
 <engineerTo>
-<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
+<item key="03B7B9CB-BBA3-3299-5BC4-0E01B1BA0011" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -61,7 +61,7 @@
 <ownerDesignName>logical_model2</ownerDesignName>
 <importedID>3FE1EEDC-4A55-93DA-6718-A6E741B4BD66</importedID>
 <engineerTo>
-<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
+<item key="03B7B9CB-BBA3-3299-5BC4-0E01B1BA0011" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -75,7 +75,7 @@
 <ownerDesignName>logical_model2</ownerDesignName>
 <importedID>29541FA7-0EB5-6110-5330-371D464A9D28</importedID>
 <engineerTo>
-<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
+<item key="03B7B9CB-BBA3-3299-5BC4-0E01B1BA0011" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -83,26 +83,13 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
 </Attribute>
-<Attribute name="creation_date" id="47D8C185-2534-1AFE-91E4-E1254731FBA1">
-<createdBy>mark</createdBy>
-<createdTime>2015-03-25 22:54:50 UTC</createdTime>
-<ownerDesignName>logical_model2</ownerDesignName>
-<importedID>700D0B8E-B220-2BC8-6396-3C4EF0C61549</importedID>
-<engineerTo>
-<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-</Attribute>
 <Attribute name="list_status" id="D4B37C60-22F4-9CB6-38BC-487BE5FDFF46">
 <createdBy>mark</createdBy>
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
 <ownerDesignName>logical_model2</ownerDesignName>
 <importedID>500791D4-3412-4798-8FA1-192FE469D75D</importedID>
 <engineerTo>
-<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
+<item key="03B7B9CB-BBA3-3299-5BC4-0E01B1BA0011" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -116,7 +103,7 @@
 <ownerDesignName>logical_model2</ownerDesignName>
 <importedID>4669FF9E-9CA1-EDFF-8726-2E441D4B927A</importedID>
 <engineerTo>
-<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
+<item key="03B7B9CB-BBA3-3299-5BC4-0E01B1BA0011" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -130,7 +117,7 @@
 <ownerDesignName>logical_model2</ownerDesignName>
 <importedID>BA6F9694-5574-C088-14BC-FA8A40879759</importedID>
 <engineerTo>
-<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
+<item key="03B7B9CB-BBA3-3299-5BC4-0E01B1BA0011" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>FBF6AB5D-3449-18AE-5576-1A3C135C26ED</referedAttribute>
@@ -144,7 +131,7 @@
 <generatorID>2DE41580-E943-9A72-C034-613D9E1AD76B</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <engineerTo>
-<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
+<item key="03B7B9CB-BBA3-3299-5BC4-0E01B1BA0011" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>9DFC1E88-A267-CB98-45CB-B2DA8A2F4F35</referedAttribute>
@@ -159,7 +146,7 @@
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
 <ownerDesignName>logical_model2</ownerDesignName>
 <engineerTo>
-<item key="40C9FF6E-DB44-0CD1-8C9E-92422C28C654" value="true"/>
+<item key="03B7B9CB-BBA3-3299-5BC4-0E01B1BA0011" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

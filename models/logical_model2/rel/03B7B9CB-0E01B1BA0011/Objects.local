@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="AE44EDC7-0C33-9D00-316D-04FD0D039775" name="NL_active_emp" seqName="seg_0"/>
+   <object objectType="Table" objectID="D49CBF30-87A0-F485-DB80-C30F96CCF94F" name="NL_file" seqName="seg_0"/>
+   <object objectType="Table" objectID="127EBEA2-6036-10E6-4392-E623ECB2DD33" name="NL_list" seqName="seg_0"/>
+   <object objectType="Table" objectID="D973B0E4-7C63-8A0A-2E8D-46EA7D2C3585" name="NL_member" seqName="seg_0"/>
+   <object objectType="Table" objectID="DBCE4F11-D2A1-1934-69AB-5C62897AF22E" name="NL_membership" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="DDC66587-F5ED-38B5-1885-3AA18DD56390" name="NL_active_emp_NL_member_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="B0487AA1-698E-71F6-A594-FFDF11361A6E" name="NL_file_NL_active_emp_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="F93CF523-C6EC-2416-82C6-C01C00A298C8" name="NL_list_NL_active_emp_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="D4C11D16-20E1-E9FA-6968-39D13A055380" name="NL_list_NL_member_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="A611AF20-55A7-9436-1945-FDD13FA3766B" name="NL_member_NL_active_emp_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="8543DE6B-F131-5843-F758-E7DF58F8E5DB" name="NL_member_NL_list_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="FA14A82E-365B-C1FC-6F00-777F75AEBB95" name="NL_membership_NL_list_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="C22F7F3D-CC13-ED1D-A76A-83E2AF523A35" name="NL_membership_NL_member_FK" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

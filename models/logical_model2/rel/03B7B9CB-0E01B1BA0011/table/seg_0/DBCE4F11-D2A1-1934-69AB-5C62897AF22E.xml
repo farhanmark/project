@@ -1,15 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="12476E5F-0BD0-A3B4-C6EA-A4850981BD31" name="NL_membership">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DBCE4F11-D2A1-1934-69AB-5C62897AF22E" name="NL_membership">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-16 22:19:24 UTC</createdTime>
+<createdTime>2015-04-16 22:38:06 UTC</createdTime>
 <generatorID>4A6ED0E4-E88A-1252-DDE0-EE4EB7F24C99</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="membership_id" id="82948E4F-1215-331D-EDCE-ED5CF10B88B2">
+<Column name="membership_id" id="3563367C-42CE-1FD4-FBD9-994798256C62">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-16 22:19:24 UTC</createdTime>
+<createdTime>2015-04-16 22:38:06 UTC</createdTime>
 <generatorID>304D45EB-778C-D9BA-6C04-EC5D5EB9B40B</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -17,72 +17,72 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="NL_member_member_id" id="5FF7022F-E9BF-69ED-45AD-F13EB2485484">
+<Column name="NL_member_member_id" id="DA5FB02F-9BB1-0907-A438-11585424D6D9">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-16 22:19:24 UTC</createdTime>
+<createdTime>2015-04-16 22:38:06 UTC</createdTime>
 <generatorID>5E58BF8B-DD18-95E4-64B5-7CE61BD33103</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<delegate>5426835C-9274-0491-2759-BA08FA000A67</delegate>
+<delegate>112CAEED-1B91-8A8B-E410-B5EBF133DC9B</delegate>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="CA82FF0D-819D-89A1-BB64-745135964BB9" referredColumn="5426835C-9274-0491-2759-BA08FA000A67"/>
+<colAssociation fkAssociation="C22F7F3D-CC13-ED1D-A76A-83E2AF523A35" referredColumn="112CAEED-1B91-8A8B-E410-B5EBF133DC9B"/>
 </associations>
 </Column>
-<Column name="NL_list_list_seq_id" id="C808C1DC-F7FB-4FC0-7279-F87C0F562EC4">
+<Column name="NL_list_list_seq_id" id="E07527E6-EC20-8181-F798-25830DF2B720">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-16 22:19:24 UTC</createdTime>
+<createdTime>2015-04-16 22:38:06 UTC</createdTime>
 <generatorID>864DE8CB-11E2-D5B2-AD9E-03AA86398ADF</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<delegate>095FE433-3249-7780-5FD3-478AF4C62F68</delegate>
+<delegate>80144668-160A-79CD-AFC3-56F85C47764E</delegate>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="4492ED2D-9F94-36A8-CB00-0992477B3113" referredColumn="095FE433-3249-7780-5FD3-478AF4C62F68"/>
+<colAssociation fkAssociation="FA14A82E-365B-C1FC-6F00-777F75AEBB95" referredColumn="80144668-160A-79CD-AFC3-56F85C47764E"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="29E518F9-024F-5949-2A25-47A8B438FDC5" name="NL_membership_PK">
+<ind_PK_UK id="600CB21D-7969-FD06-7BE1-913760F19373" name="NL_membership_PK">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-16 22:19:24 UTC</createdTime>
+<createdTime>2015-04-16 22:38:06 UTC</createdTime>
 <generatorID>0559273F-31AE-2B05-9479-98AA23633175</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="82948E4F-1215-331D-EDCE-ED5CF10B88B2"/>
+<colUsage columnID="3563367C-42CE-1FD4-FBD9-994798256C62"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="3D4D8A6A-333D-DE76-BDFE-90A17F556096" name="NL_membership_NL_list_FK">
+<ind_PK_UK id="4A4F60EA-51C3-07BC-F071-350ADBFD35BA" name="NL_membership_NL_list_FK">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-16 22:19:24 UTC</createdTime>
+<createdTime>2015-04-16 22:38:06 UTC</createdTime>
 <generatorID>A811BD59-1E45-CBAE-CE28-748C2A8DF400</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="C808C1DC-F7FB-4FC0-7279-F87C0F562EC4"/>
+<colUsage columnID="E07527E6-EC20-8181-F798-25830DF2B720"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="3F2DF62D-33F6-49AD-B8A7-D18AA4A0E243" name="NL_membership_NL_member_FK">
+<ind_PK_UK id="57F4F0BA-3A41-F45F-D73D-07994F8525BB" name="NL_membership_NL_member_FK">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-16 22:19:24 UTC</createdTime>
+<createdTime>2015-04-16 22:38:06 UTC</createdTime>
 <generatorID>240BDC79-47A6-E863-09A7-98B952356FD9</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="5FF7022F-E9BF-69ED-45AD-F13EB2485484"/>
+<colUsage columnID="DA5FB02F-9BB1-0907-A438-11585424D6D9"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
