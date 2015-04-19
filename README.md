@@ -5,8 +5,8 @@ A note about models
 - Our first logical model is `logical_model`, and it was abandoned in favor of a model that did not mangle the active employees table.
 
 
-Steps taken to ensure fullfillment of must-haves and nice-to-haves
-==================================================================
+Fullfillment of must-haves and nice-to-haves
+============================================
 - Went through all must haves and determined approximately what was needed from home page instructions
 - Added the Files table for file upload/download
 - Plan to create views to accomodate any other needs, such as trees.
@@ -20,8 +20,8 @@ all we had at the time.
 
 TODO
 ====
-- Associate user id with uploaded files using select list on home page
-- Prevent duplicate inserts on list membership page
+- [ ] Associate user id with uploaded files using select list on home page
+- [ ] Prevent duplicate inserts on list membership page
 
 
 Pages in our Webapp (subject to change)
