@@ -22,6 +22,9 @@ TODO
 ====
 - [ ] Associate user id with uploaded files using select list on home page
 - [ ] Prevent duplicate inserts on list membership page
+- [ ] Prevent cycles on list membership page
+- [ ] Security on list membership page
+- [ ] Beautify the list membership page
 
 
 Pages in our Webapp (subject to change)
