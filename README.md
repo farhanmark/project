@@ -28,7 +28,6 @@ Pages and Features (subject to change)
     - [ ] select list to choose current user
         - [ ] select user at start of the session and keep track of the user through session
             - [ ] reference as `:p1_select_list_name`
-
 - [ ] Random file upload/download page
     - [x] allow users to upload and download files
     - [ ] Associate user id with uploaded files using select list on home page
