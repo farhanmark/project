@@ -36,12 +36,12 @@ Pages and Features (subject to change)
 ======================================
 - [ ] Home
     - [ ] put a shortcut to this page from every other page
-    - [ ] select list to choose current user
-        - [ ] select user at start of the session and keep track of the user through session
-            - [ ] reference as `:p1_select_list_name`
-- [ ] Random file upload/download page
-    - [x] allow users to upload and download files
-    - [ ] Associate user id with uploaded files using select list on home page
+    - [x] select list to choose current user
+        - [x] select user at start of the session and keep track of the user through session
+            - [x] reference as `:p1_select_list_name`
+- [x] Random file upload/download page
+    - [x] Allow users to upload and download files
+    - [x] Associate user id with uploaded files using select list on home page
 - [ ] list membership page
     - [x] add users and lists to list using shuttles
     - [x] search for users
@@ -49,6 +49,8 @@ Pages and Features (subject to change)
     - [ ] Prevent duplicate inserts on list
     - [ ] Prevent cycles on list
     - [ ] Security
+        - [ ] Require a user to be logged in
+        - [ ] Enforce proper permissions
     - [ ] Beautify
 - [ ] list maintainance
     - [ ] clone membership
