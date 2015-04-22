@@ -43,13 +43,14 @@ Pages and Features (subject to change)
     - [x] Allow users to upload and download files
     - [x] Associate user id with uploaded files using select list on home page
 - [ ] list membership page
-    - [x] add users and lists to list using shuttles
-    - [x] search for users
-    - [ ] group select lists
-    - [ ] Prevent duplicate inserts on list
-    - [ ] Prevent cycles on list
+    - [x] Add users and lists to list using shuttles
+    - [x] Search for users
+    - [ ] Group select lists (group lists by division?)
+    - [x] Prevent duplicate inserts on list
+    - [ ] Show users already on list in the shuttle (nice-to-have)
+    - [x] Prevent cycles on list
     - [ ] Security
-        - [ ] Require a user to be logged in
+        - [x] Require a user to be logged in
         - [ ] Enforce proper permissions
     - [ ] Beautify
 - [ ] list maintainance
