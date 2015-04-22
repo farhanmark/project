@@ -40,12 +40,12 @@ Pages and Features (subject to change)
 - [x] Random file upload/download page
     - [x] Allow users to upload and download files
     - [x] Associate user id with uploaded files using select list on home page
-- [ ] list membership page
+- [x] list membership page
     - [x] Add users and lists to list using shuttles
     - [x] Search for users
     - [x] Group select lists (group lists by division)
     - [x] Prevent duplicate inserts on list
-    - [ ] Prevent adding inactive users
+    - [x] Prevent adding inactive users
     - [x] Allow multiple removal from lists
     - [x] Prevent cycles on list
     - [x] Security
@@ -63,6 +63,6 @@ Pages and Features (subject to change)
     - [ ] users
     - [ ] admin
     - [ ] use a tree
-    - [ ] allow upload of CSV file to load active employees
+    - [x] allow upload of CSV file to load active employees
 - [ ] Misc other features
     - [ ] Buttons that return to page correctly
