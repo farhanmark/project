@@ -42,13 +42,13 @@ Pages and Features (subject to change)
 - [x] Random file upload/download page
     - [x] Allow users to upload and download files
     - [x] Associate user id with uploaded files using select list on home page
-- [ ] list membership page
+- [x] list membership page
     - [x] Add users and lists to list using shuttles
     - [x] Search for users
-    - [ ] Group select lists (group lists by division?)
+    - [x] Group select lists (group lists by division)
     - [x] Prevent duplicate inserts on list
     - [ ] view list membership as read only for lists of a different lab (?)
-    - [ ] Show users already on list in the shuttle (nice-to-have)
+    - [ ] Show users already on list in the shuttle (?)
     - [x] Prevent cycles on list
     - [x] Security
         - [x] Require a user to be logged in
@@ -62,6 +62,7 @@ Pages and Features (subject to change)
 - [ ] list management: create/edit/remove lists
 - [ ] view
     - [ ] lists
+        - [ ] list membership (view only, no editing)
     - [ ] users
     - [ ] admin
     - [ ] use a tree
