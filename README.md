@@ -58,7 +58,7 @@ Pages and Features (subject to change)
     - [ ] clone membership
     - [ ] remove from list
     - [ ] employee list membership
-    - [ ] region display selector to switch between list maintainance and management
+    - [x] Region display selector to switch between list maintainance and management
 - [ ] list management: create/edit/remove lists
 - [ ] view
     - [ ] lists
