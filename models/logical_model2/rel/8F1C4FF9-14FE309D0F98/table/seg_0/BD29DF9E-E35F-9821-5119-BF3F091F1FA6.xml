@@ -1,15 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C0A9C3FE-A8C1-4E5F-A00D-D017780AA331" name="NL_member">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BD29DF9E-E35F-9821-5119-BF3F091F1FA6" name="NL_member">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-22 01:43:24 UTC</createdTime>
+<createdTime>2015-04-22 17:57:18 UTC</createdTime>
 <generatorID>B3C0C03F-A4BD-1F76-B6E0-104BECD74389</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="member_id" id="12EED97F-02E9-C005-A8CB-6C66EB3979E4">
+<Column name="member_id" id="CAC2A1F6-A4E5-31A5-1ACD-609E11EE9F5A">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-22 01:43:24 UTC</createdTime>
+<createdTime>2015-04-22 17:57:18 UTC</createdTime>
 <generatorID>9DFC1E88-A267-CB98-45CB-B2DA8A2F4F35</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -17,9 +17,9 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="type" id="DA0CE75C-C918-19D1-510B-91C6C47591EF">
+<Column name="type" id="167E82E9-6F4E-3F51-CDA0-97E9F3A605E9">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-22 01:43:24 UTC</createdTime>
+<createdTime>2015-04-22 17:57:18 UTC</createdTime>
 <generatorID>7FE8A1D0-966A-E49C-D74B-CB80EDF9640C</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -29,94 +29,94 @@
 <dataTypeSize>255</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="NL_active_emp_employee_id" id="2FF889B3-05C9-878C-6627-C16F5B250489">
+<Column name="NL_active_emp_employee_id" id="3A3D8233-A72D-E3B1-32A2-6666C6229051">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-22 01:43:24 UTC</createdTime>
+<createdTime>2015-04-22 17:57:18 UTC</createdTime>
 <generatorID>69FB70A4-6453-9DA4-E8DF-42E1987E81B1</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<delegate>14FF5161-66EF-505C-3744-197182003180</delegate>
+<delegate>0EE5C592-821E-A6A3-FADE-C03E1B33F533</delegate>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="150EAB53-443A-FB61-DAB9-19141345FE31" referredColumn="14FF5161-66EF-505C-3744-197182003180"/>
+<colAssociation fkAssociation="9C219ECD-FBFC-B39E-16C7-C1E2AB6E3E4F" referredColumn="0EE5C592-821E-A6A3-FADE-C03E1B33F533"/>
 </associations>
 </Column>
-<Column name="NL_list_list_seq_id" id="549A4A83-4AE1-E146-3AC4-CDE770DF267E">
+<Column name="NL_list_list_seq_id" id="66C57015-7389-9DB2-A50F-2B4D2B0F398A">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-22 01:43:24 UTC</createdTime>
+<createdTime>2015-04-22 17:57:18 UTC</createdTime>
 <generatorID>33898209-9150-8EE9-85AA-1AB9887FD1BB</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<delegate>00569999-A7F5-1975-C988-2022E2A5DE5C</delegate>
+<delegate>611F625D-D0FC-68BD-B3B3-2A5C0E568F9D</delegate>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="9EAC0251-B27F-FD52-70FE-F2169A568B21" referredColumn="00569999-A7F5-1975-C988-2022E2A5DE5C"/>
+<colAssociation fkAssociation="3F4B99E7-43E3-F4D8-3BD3-B34714F51703" referredColumn="611F625D-D0FC-68BD-B3B3-2A5C0E568F9D"/>
 </associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="C6150B4A-69E6-133F-9F82-C3A1D3E06161" name="NL_member_PK">
+<ind_PK_UK id="5C21B4BF-1998-6DF7-49E9-CE9A28CB6E31" name="NL_member_PK">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-22 01:43:24 UTC</createdTime>
+<createdTime>2015-04-22 17:57:18 UTC</createdTime>
 <generatorID>68540608-37D1-6AEE-2CDB-97FC7F5031AF</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="12EED97F-02E9-C005-A8CB-6C66EB3979E4"/>
+<colUsage columnID="CAC2A1F6-A4E5-31A5-1ACD-609E11EE9F5A"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="9CF2F372-4D08-811F-790C-5C925DDF5934" name="NL_member__IDX">
+<ind_PK_UK id="5170384D-D2AE-D9D2-74A4-9F39F90921A2" name="NL_member__IDX">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-22 01:43:24 UTC</createdTime>
+<createdTime>2015-04-22 17:57:18 UTC</createdTime>
 <ownerDesignName>logical_model2</ownerDesignName>
 <indexState>Unique Plain Index</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <relationGeneratorID>62FA421D-BE27-AE7B-081F-62E21304A054</relationGeneratorID>
 <indexColumnUsage>
-<colUsage columnID="2FF889B3-05C9-878C-6627-C16F5B250489"/>
+<colUsage columnID="3A3D8233-A72D-E3B1-32A2-6666C6229051"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="F366BB55-4789-DC27-661D-D0B5519A74CA" name="NL_member__IDXv1">
+<ind_PK_UK id="CC2E182F-DDFC-ED56-4A73-7B2FD3092939" name="NL_member__IDXv1">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-22 01:43:24 UTC</createdTime>
+<createdTime>2015-04-22 17:57:18 UTC</createdTime>
 <ownerDesignName>logical_model2</ownerDesignName>
 <indexState>Unique Plain Index</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <relationGeneratorID>2DE41580-E943-9A72-C034-613D9E1AD76B</relationGeneratorID>
 <indexColumnUsage>
-<colUsage columnID="549A4A83-4AE1-E146-3AC4-CDE770DF267E"/>
+<colUsage columnID="66C57015-7389-9DB2-A50F-2B4D2B0F398A"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="55D8A756-BD24-2743-0F65-8B52D6600C5A" name="NL_member_NL_active_emp_FK">
+<ind_PK_UK id="B234B647-4C89-08D0-7047-DCFA1C5694F1" name="NL_member_NL_active_emp_FK">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-22 01:43:24 UTC</createdTime>
+<createdTime>2015-04-22 17:57:18 UTC</createdTime>
 <generatorID>62FA421D-BE27-AE7B-081F-62E21304A054</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="2FF889B3-05C9-878C-6627-C16F5B250489"/>
+<colUsage columnID="3A3D8233-A72D-E3B1-32A2-6666C6229051"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="809BFBF8-0833-1FE6-FD3F-1A85624ABB83" name="NL_member_NL_list_FK">
+<ind_PK_UK id="4968559D-86BF-65D7-8BCD-5FE2420642BC" name="NL_member_NL_list_FK">
 <createdBy>mark</createdBy>
-<createdTime>2015-04-22 01:43:24 UTC</createdTime>
+<createdTime>2015-04-22 17:57:18 UTC</createdTime>
 <generatorID>2DE41580-E943-9A72-C034-613D9E1AD76B</generatorID>
 <ownerDesignName>logical_model2</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="549A4A83-4AE1-E146-3AC4-CDE770DF267E"/>
+<colUsage columnID="66C57015-7389-9DB2-A50F-2B4D2B0F398A"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

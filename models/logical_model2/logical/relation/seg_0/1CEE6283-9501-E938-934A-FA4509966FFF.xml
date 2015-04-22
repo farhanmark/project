@@ -4,7 +4,7 @@
 <createdTime>2015-03-25 22:54:50 UTC</createdTime>
 <ownerDesignName>logical_model2</ownerDesignName>
 <engineerTo>
-<item key="065F7F06-F827-BB3E-136B-5594EED784BA" value="true"/>
+<item key="3D77830D-9376-4FD3-0C4A-C56629234279" value="true"/>
 </engineerTo>
 <sourcePk>FE2BC33D-9A6F-3A68-1196-7B0163010365</sourcePk>
 <identifying>false</identifying>
@@ -15,5 +15,5 @@
 <targetCardinalityString>*</targetCardinalityString>
 <targetEntity>A50B3111-9198-EC19-0A09-0F0BD5C08B82</targetEntity>
 <transferable>true</transferable>
-<deleteRule>NO ACTION</deleteRule>
+<deleteRule>CASCADE</deleteRule>
 </Relation>

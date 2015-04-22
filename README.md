@@ -36,24 +36,21 @@ Pages and Features (subject to change)
 ======================================
 - [ ] Home
     - [ ] put a shortcut to this page from every other page
-    - [x] select list to choose current user
-        - [x] select user at start of the session and keep track of the user through session
-            - [x] reference as `:p1_select_list_name`
+    - [x] select user at start of the session and keep track of the user through session
 - [x] Random file upload/download page
     - [x] Allow users to upload and download files
     - [x] Associate user id with uploaded files using select list on home page
-- [x] list membership page
+- [ ] list membership page
     - [x] Add users and lists to list using shuttles
     - [x] Search for users
     - [x] Group select lists (group lists by division)
     - [x] Prevent duplicate inserts on list
-    - [ ] view list membership as read only for lists of a different lab (?)
-    - [ ] Show users already on list in the shuttle (?)
+    - [ ] Prevent adding inactive users
+    - [x] Allow multiple removal from lists
     - [x] Prevent cycles on list
     - [x] Security
         - [x] Require a user to be logged in
         - [x] Enforce proper permissions
-    - [ ] Beautify
 - [ ] list maintainance
     - [ ] clone membership
     - [ ] remove from list
