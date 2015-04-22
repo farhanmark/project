@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1A7657B9-0C2E-4F75-FAD9-FB35BBF0117B" name="NL_division">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-22 01:43:24 UTC</createdTime>
+<generatorID>BE4CCDB1-9C81-0C20-A244-73C619D1631F</generatorID>
+<ownerDesignName>logical_model2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="div_code" id="F84FB867-0C70-4151-BA55-0F16CF2D70EE">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-22 01:43:24 UTC</createdTime>
+<generatorID>4563D1F1-FF5B-8FD0-A3AD-7FC03B34759A</generatorID>
+<ownerDesignName>logical_model2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lab_code" id="878C055E-1DE6-F28C-FC1D-87AB3235941C">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-22 01:43:24 UTC</createdTime>
+<generatorID>CD59778C-630A-33C6-1C59-99A2176E0597</generatorID>
+<ownerDesignName>logical_model2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B5A1DFEF-322B-EFC3-4F9E-70F1150853DB" name="NL_division_PK">
+<createdBy>mark</createdBy>
+<createdTime>2015-04-22 01:43:24 UTC</createdTime>
+<generatorID>67061E28-CBD2-F328-C146-B9F45FC7F16A</generatorID>
+<ownerDesignName>logical_model2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F84FB867-0C70-4151-BA55-0F16CF2D70EE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
