@@ -47,11 +47,12 @@ Pages and Features (subject to change)
     - [x] Search for users
     - [ ] Group select lists (group lists by division?)
     - [x] Prevent duplicate inserts on list
+    - [ ] view list membership as read only for lists of a different lab (?)
     - [ ] Show users already on list in the shuttle (nice-to-have)
     - [x] Prevent cycles on list
-    - [ ] Security
+    - [x] Security
         - [x] Require a user to be logged in
-        - [ ] Enforce proper permissions
+        - [x] Enforce proper permissions
     - [ ] Beautify
 - [ ] list maintainance
     - [ ] clone membership
