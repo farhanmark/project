@@ -15,6 +15,23 @@ select NL_active_emp_seq.nextval into :new.employee_id from dual;
 end; 
 /
 
+DROP SEQUENCE NL_division_seq ; 
+create sequence NL_division_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER NL_division_PK_trig 
+; 
+
+create or replace trigger NL_division_PK_trig 
+before insert on NL_division
+for each row 
+begin 
+select NL_division_seq.nextval into :new.div_code from dual; 
+end; 
+/
+
 DROP SEQUENCE NL_file_seq ; 
 create sequence NL_file_seq 
 start with 100 

@@ -38,6 +38,46 @@ begin
 end; 
 /
 
+DROP SEQUENCE NL_division_seq ; 
+create sequence NL_division_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+
+create or replace trigger NL_division_PK_trig 
+before insert on NL_division
+for each row 
+begin 
+select NL_division_seq.nextval into :new.div_code from dual; 
+end; 
+/
+alter table NL_division add created date ; 
+alter table NL_division add created_by VARCHAR2 (255) ; 
+alter table NL_division add row_version_number integer ; 
+alter table NL_division add updated date ; 
+alter table NL_division add updated_by VARCHAR2 (255) ; 
+/
+create or replace trigger NL_division_AUD_trig 
+before insert or update on NL_division 
+for each row 
+begin 
+  if inserting then 
+    :new.created := localtimestamp; 
+    :new.created_by := nvl(wwv_flow.g_user,user); 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+    :new.row_version_number := 1; 
+  elsif updating then 
+    :new.row_version_number := nvl(:old.row_version_number,1) + 1; 
+  end if; 
+  if inserting or updating then 
+    :new.updated := localtimestamp; 
+    :new.updated_by := nvl(wwv_flow.g_user,user); 
+  end if; 
+end; 
+/
+
 DROP SEQUENCE NL_file_seq ; 
 create sequence NL_file_seq 
 start with 100 
