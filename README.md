@@ -35,12 +35,12 @@ Our initial review presentation is `Initial_review_presentation.odp`. Sorry, Lib
 Pages and Features (subject to change)
 ======================================
 - [ ] Home
-    - [ ] put a shortcut to this page from every other page
-    - [x] select user at start of the session and keep track of the user through session
+    - [ ] Put a shortcut to this page from every other page (?)
+    - [x] Select user at start of the session and keep track of the user through session
 - [x] Random file upload/download page
     - [x] Allow users to upload and download files
     - [x] Associate user id with uploaded files using select list on home page
-- [x] list membership page
+- [x] List membership page
     - [x] Add users and lists to list using shuttles
     - [x] Search for users
     - [x] Group select lists (group lists by division)
@@ -51,18 +51,23 @@ Pages and Features (subject to change)
     - [x] Security
         - [x] Require a user to be logged in
         - [x] Enforce proper permissions
-- [ ] list maintainance
-    - [ ] clone membership
-    - [ ] remove from list
-    - [ ] employee list membership
+- [ ] List maintainance
+    - [ ] Clone membership
+    - [ ] Remove from list
+    - [ ] Employee list membership
     - [x] Region display selector to switch between list maintainance and management
-- [ ] list management: create/edit/remove lists
-- [ ] view
-    - [ ] lists
-        - [ ] list membership (view only, no editing)
-    - [ ] users
-    - [ ] admin
-    - [ ] use a tree
-    - [x] allow upload of CSV file to load active employees
+- [ ] List management
+    - [ ] Create lists
+    - [ ] Edit lists
+    - [ ] Remove lists
+- [ ] View
+    - [ ] Lists
+        - [ ] List membership (view only, no editing)
+        - [ ] Use a tree
+    - [ ] Employees (Std and Admin)
+        - [x] All employees
+        - [ ] Sub-views for std and admin employees
+    - [x] Allow upload of CSV file to load active employees
+    - [x] Allow download of CSV file from active employees table (built-in to APEX)
 - [ ] Misc other features
     - [ ] Buttons that return to page correctly
