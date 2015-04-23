@@ -32,6 +32,11 @@ Initial Review
 Our initial review presentation is `Initial_review_presentation.odp`. Sorry, LibreOffice is all we had at the time.
 
 
+Final Review
+============
+Coming sooner than I wish.
+
+
 Pages and Features (subject to change)
 ======================================
 - [ ] Home
