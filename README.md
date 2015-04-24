@@ -62,10 +62,10 @@ Pages and Features (subject to change)
     - [x] Security
         - [x] Require a user to be logged in
         - [x] Enforce proper permissions
-- [ ] List maintainance
-    - [ ] Clone membership
-    - [ ] Remove from list
-    - [ ] Employee list membership
+- [x] List maintainance
+    - [x] Clone membership
+    - [x] Remove from all lists
+    - [x] Employee list membership
     - [x] Region display selector to switch between list maintainance and management
 - [ ] List management
     - [ ] Create lists
