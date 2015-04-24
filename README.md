@@ -78,13 +78,13 @@ Pages and Features (subject to change)
             - [ ] check for inactive members
         - [ ] only admins
     - [ ] Edit lists
-        - [ ]name of list
-        - [ ]desc
-        - [ ]div
-        - [ ]ext name
-        - [ ]status
-        - [ ]only admins
-        - [ ]list must be active
+        - [ ] name of list
+        - [ ] desc
+        - [ ] div
+        - [ ] ext name
+        - [ ] status
+        - [ ] only admins
+        - [ ] list must be active
     - [ ] Remove lists
 - [ ] View
     - [ ] Lists
