@@ -15,9 +15,15 @@ All data models are in the `models` directory.
 
 *Conceptual Model*: This is our conceptual model. It was originally based on the one given in class, but it has morphed quited a bit.
 
+![Image of conceptual model]
+(./models/conceptual.png)
+
 *Logical Model 1*: This model is call `logical_model`. It was our first attempt, but since it rolled up the active employees table, it was reformed into the second logical model.
 
 *Logical Model 2*: This is our current model. It leaves the active employees table untouched by dealing with heirarchy in the conceptual model differently.
+
+![Image of logical model]
+(./models/logical.png)
 
 
 Fullfillment of must-haves and nice-to-haves
