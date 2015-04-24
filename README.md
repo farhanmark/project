@@ -51,7 +51,7 @@ Pages and Features (subject to change)
 - [x] Random file upload/download page
     - [x] Allow users to upload and download files
     - [x] Associate user id with uploaded files using select list on home page
-- [x] List membership page
+- [ ] List membership page
     - [x] Add users and lists to list using shuttles
     - [x] Search for users
     - [x] Group select lists (group lists by division)
@@ -62,14 +62,29 @@ Pages and Features (subject to change)
     - [x] Security
         - [x] Require a user to be logged in
         - [x] Enforce proper permissions
-- [x] List maintainance
+    - [ ] alert for inactive members (employees or lists) on list
+- [ ] List maintainance
     - [x] Clone membership
     - [x] Remove from all lists
     - [x] Employee list membership
     - [x] Region display selector to switch between list maintainance and management
+    - [ ] only for same lab
+    - [ ] warning for labs the user cannot access
 - [ ] List management
     - [ ] Create lists
+        - [ ] require name, desc
+        - [ ] default div to user's div, but allow chg
+        - [ ] create a copy of existing list
+            - [ ] check for inactive members
+        - [ ] only admins
     - [ ] Edit lists
+        - [ ]name of list
+        - [ ]desc
+        - [ ]div
+        - [ ]ext name
+        - [ ]status
+        - [ ]only admins
+        - [ ]list must be active
     - [ ] Remove lists
 - [ ] View
     - [ ] Lists
