@@ -1,15 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.logical.LogicalDesign>
-   <object objectType="Entity" objectID="D6BFD92D-2618-9036-4A50-F962F023417D" name="NL_active_emp" seqName="seg_0"/>
-   <object objectType="Entity" objectID="BE4CCDB1-9C81-0C20-A244-73C619D1631F" name="NL_division" seqName="seg_0"/>
-   <object objectType="Entity" objectID="EF6A5841-BCF5-B943-EA16-F7A0B3470BE6" name="NL_file" seqName="seg_0"/>
    <object objectType="Entity" objectID="A50B3111-9198-EC19-0A09-0F0BD5C08B82" name="NL_list" seqName="seg_0"/>
+   <object objectType="Entity" objectID="EF6A5841-BCF5-B943-EA16-F7A0B3470BE6" name="NL_file" seqName="seg_0"/>
+   <object objectType="Entity" objectID="D6BFD92D-2618-9036-4A50-F962F023417D" name="NL_active_emp" seqName="seg_0"/>
    <object objectType="Entity" objectID="B3C0C03F-A4BD-1F76-B6E0-104BECD74389" name="NL_member" seqName="seg_0"/>
    <object objectType="Entity" objectID="4A6ED0E4-E88A-1252-DDE0-EE4EB7F24C99" name="NL_membership" seqName="seg_0"/>
+   <object objectType="Entity" objectID="BE4CCDB1-9C81-0C20-A244-73C619D1631F" name="NL_division" seqName="seg_0"/>
+   <object objectType="Relation" objectID="62FA421D-BE27-AE7B-081F-62E21304A054" name="r6" seqName="seg_0"/>
+   <object objectType="Relation" objectID="2DE41580-E943-9A72-C034-613D9E1AD76B" name="r7" seqName="seg_0"/>
    <object objectType="Relation" objectID="1CEE6283-9501-E938-934A-FA4509966FFF" name="r1" seqName="seg_0"/>
    <object objectType="Relation" objectID="A811BD59-1E45-CBAE-CE28-748C2A8DF400" name="r10" seqName="seg_0"/>
    <object objectType="Relation" objectID="89412AC1-24FB-0195-B7A2-551FD22AD63F" name="r4" seqName="seg_0"/>
-   <object objectType="Relation" objectID="62FA421D-BE27-AE7B-081F-62E21304A054" name="r6" seqName="seg_0"/>
-   <object objectType="Relation" objectID="2DE41580-E943-9A72-C034-613D9E1AD76B" name="r7" seqName="seg_0"/>
    <object objectType="Relation" objectID="240BDC79-47A6-E863-09A7-98B952356FD9" name="r9" seqName="seg_0"/>
 </oracle.dbtools.crest.model.design.logical.LogicalDesign>
