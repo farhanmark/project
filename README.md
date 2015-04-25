@@ -2,6 +2,8 @@ APEX
 ====
 https://apex.oracle.com/pls/apex/f?p=91458:1:32321253844660::NO:::
 
+Username: test
+Password: passwd
 
 Data Models
 ===========
@@ -86,8 +88,8 @@ Pages and Features (subject to change)
     - [ ] Lists
         - [ ] List membership (view only, no editing)
         - [ ] Use a tree
-    - [ ] Employees (Std and Admin)
+    - [x] Employees
         - [x] All employees
-        - [ ] Sub-views for std and admin employees
+        - [x] Sub-views for std and admin employees
     - [x] Allow upload of CSV file to load active employees
     - [x] Allow download of CSV file from active employees table (built-in to APEX)
