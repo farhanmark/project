@@ -73,17 +73,13 @@ Pages and Features (subject to change)
         - [ ] Require name, desc
         - [ ] Default div to user's div, but allow chg
         - [ ] Create a copy of existing list
-            - [ ] Check for inactive members
+            - [ ] Copy metadata
+            - [ ] Copy active members
+                - [ ] Check for inactive members
         - [ ] Only admins
-    - [ ] Edit lists
-        - [ ] list_name
-        - [ ] desc
-        - [ ] div
-        - [ ] ext_name
-        - [ ] status
+    - [ ] Edit list name, desc, div, ext name, or status
         - [ ] only admins
         - [ ] list must be active
-    - [ ] Remove lists
 - [ ] View
     - [ ] Lists
         - [ ] List membership (view only, no editing)
