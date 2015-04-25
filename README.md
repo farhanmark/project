@@ -69,17 +69,16 @@ Pages and Features (subject to change)
     - [ ] Only for same lab
     - [ ] Warning for labs the user cannot access
 - [ ] List management
-    - [ ] Create lists
-        - [ ] Require name, desc
-        - [ ] Default div to user's div, but allow chg
-        - [ ] Create a copy of existing list
-            - [ ] Copy metadata
-            - [ ] Copy active members
-                - [ ] Check for inactive members
-        - [ ] Only admins
-    - [ ] Edit list name, desc, div, ext name, or status
-        - [ ] only admins
-        - [ ] list must be active
+    - [x] Create lists
+        - [x] Require name, desc
+        - [x] Default div to user's div, but allow chg
+    - [ ] Copy existing list
+        - [ ] Copy metadata
+        - [ ] Copy active members
+            - [ ] Check for inactive members
+        - [x] Only admins
+    - [x] Edit list name, desc, div, ext name, or status
+        - [x] only admins
 - [ ] View
     - [ ] Lists
         - [ ] List membership (view only, no editing)
