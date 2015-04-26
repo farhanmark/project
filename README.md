@@ -68,14 +68,14 @@ Pages and Features (subject to change)
     - [x] Region display selector to switch between list maintainance and management
     - [ ] Only for same lab
     - [ ] Warning for labs the user cannot access
-- [ ] List management
+- [x] List management
     - [x] Create lists
         - [x] Require name, desc
         - [x] Default div to user's div, but allow chg
-    - [ ] Copy existing list
-        - [ ] Copy metadata
-        - [ ] Copy active members
-            - [ ] Check for inactive members
+    - [x] Copy existing list
+        - [x] Copy metadata
+        - [x] Copy active members
+            - [x] Check for inactive members
         - [x] Only admins
     - [x] Edit list name, desc, div, ext name, or status
         - [x] only admins
