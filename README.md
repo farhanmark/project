@@ -42,7 +42,7 @@ Coming sooner than I wish.
 Pages and Features (subject to change)
 ======================================
 - [x] Home
-    - [x] Put a shortcut to this page from every other page
+    - [x] Shortcut to this page from every other page to login
     - [x] Select user at start of the session and keep track of the user through session
 - [x] Random file upload/download page
     - [x] Allow users to upload and download files
@@ -61,13 +61,13 @@ Pages and Features (subject to change)
     - [ ] Alert for inactive members (employees or lists) on list
     - [ ] Button to create new list
         - [ ] Return to correctly to membership page
-- [ ] List maintainance
+- [x] List maintainance
     - [x] Clone membership
     - [x] Remove from all lists
     - [x] Employee list membership
     - [x] Region display selector to switch between list maintainance and management
-    - [ ] Only for same lab
-    - [ ] Warning for labs the user cannot access
+    - [x] Only for same lab
+    - [x] Warning for labs the user cannot access
 - [x] List management
     - [x] Create lists
         - [x] Require name, desc
