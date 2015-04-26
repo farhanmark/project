@@ -8,16 +8,16 @@ Data Models
 ===========
 All data models are in the [`models`](./models) directory.
 
-[*Conceptual Model*](./models): This is our conceptual model. It was originally based on the one given in class, but it has morphed quited a bit.
+[*Conceptual Model*](./models): It was originally based on the one given in class, but it has morphed quited a bit.
 
 ![Image of conceptual model]
 (./models/conceptual.png)
 
-[*Logical Model 1*](./models): This model is call `logical_model`. It was our first attempt, but since it rolled up the active employees table, it was reformed into the second logical model.
+[*Logical Model 1*](./models): It was our first attempt, but since it rolled up the active employees table, it was reformed into the second logical model.
 
-[*Logical Model 2*](./models): This is our current model. It leaves the active employees table untouched by dealing with heirarchy in the conceptual model differently.
+[*Logical Model 2*](./models): This is our current logical model. It leaves the active employees table untouched by dealing with heirarchy in the conceptual model differently.
 
-![Image of logical model]
+![Image of logical model 2]
 (./models/logical.png)
 
 
