@@ -66,9 +66,26 @@ end loop;
 return v_dec;
 end hex_to_decimal;
 
+CREATE OR REPLACE FUNCTION getstatus (memberid number)
+RETURN varchar2 IS
+   stat varchar(255) := 0;
+BEGIN
+   SELECT MEMBER_STATUS
+INTO stat
+FROM (
+    (SELECT nl2.LIST_STATUS AS MEMBER_STATUS
+    FROM NL_MEMBER mb2 JOIN NL_LIST nl2
+    ON mb2.NL_LIST_LIST_SEQ_ID = nl2.LIST_SEQ_ID
+    WHERE mb2.MEMBER_ID = memberid)
 
+UNION
 
+(SELECT emp2.STATUS AS MEMBER_STATUS
+    FROM NL_MEMBER mb2 JOIN NL_ACTIVE_EMP emp2
+    ON mb2.NL_ACTIVE_EMP_EMPLOYEE_ID = emp2.EMPLOYEE_ID
+    WHERE mb2.MEMBER_ID = memberid));
 
-
-
-
+   
+   RETURN stat;
+END;
+/

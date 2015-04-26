@@ -60,8 +60,8 @@ Pages and Features (subject to change)
         - [x] Require a user to be logged in
         - [x] Enforce proper permissions
     - [ ] Alert for inactive members (employees or lists) on list
-    - [ ] Button to create new list
-        - [ ] Return to correctly to membership page
+    - [x] Button to create new list
+        - [x] Return to correctly to membership page
 - [x] List maintainance
     - [x] Clone membership
     - [x] Remove from all lists
