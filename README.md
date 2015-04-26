@@ -91,3 +91,7 @@ Pages and Features (subject to change)
         - [x] Sub-views for std and admin employees
     - [x] Allow upload of CSV file to load active employees
     - [x] Allow download of CSV file from active employees table (built-in to APEX)
+- [x] Nice-to-haves
+    - [x] Authorization scheme to disallow permission to edit tables based on who is logged in
+    - [x] Used theme roller to change to "Slate" theme
+    - [x] Used processes, validations, and branches for many of the functions of the various pages
