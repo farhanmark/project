@@ -2,15 +2,13 @@ APEX
 ====
 The application can be accessed [here](https://apex.oracle.com/pls/apex/f?p=91458).
 
-Username: test
+If prompted, username: *test* and password: *passwd*
 
-Password: passwd
-
-The application is exported as [f91458.sql](./f91458.sql).
+The application is exported as [`f91458.sql`](./f91458.sql).
 
 Data Models
 ===========
-All data models are in the [models](./models) directory.
+All data models are in the [`models`](./models) directory.
 
 [*Conceptual Model*](./models): This is our conceptual model. It was originally based on the one given in class, but it has morphed quited a bit.
 
