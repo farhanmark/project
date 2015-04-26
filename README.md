@@ -1,8 +1,6 @@
 APEX
 ====
-The application can be accessed [here](https://apex.oracle.com/pls/apex/f?p=91458).
-
-If prompted, username: *test* and password: *passwd*
+The application can be accessed [here](https://apex.oracle.com/pls/apex/f?p=91458). If prompted, username: *test* and password: *passwd*.
 
 The application is exported as [`f91458.sql`](./f91458.sql).
 
