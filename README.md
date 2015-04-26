@@ -48,7 +48,7 @@ Pages and Features (subject to change)
 - [x] Random file upload/download page
     - [x] Allow users to upload and download files
     - [x] Associate user id with uploaded files using select list on home page
-- [ ] List membership page
+- [x] List membership page
     - [x] Add users and lists to list using shuttles
     - [x] Search for users
     - [x] Group select lists (group lists by division)
@@ -59,7 +59,7 @@ Pages and Features (subject to change)
     - [x] Security
         - [x] Require a user to be logged in
         - [x] Enforce proper permissions
-    - [ ] Alert for inactive members (employees or lists) on list
+    - [x] Alert for inactive members (employees or lists) on list
     - [x] Button to create new list
         - [x] Return to correctly to membership page
 - [x] List maintainance
