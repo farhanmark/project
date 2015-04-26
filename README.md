@@ -6,6 +6,8 @@ Username: test
 
 Password: passwd
 
+The application is exported as [f91458.sql](./f91458.sql).
+
 Data Models
 ===========
 All data models are in the `models` directory.
@@ -80,13 +82,12 @@ Pages and Features (subject to change)
         - [x] Only admins
     - [x] Edit list name, desc, div, ext name, or status
         - [x] only admins
-- [ ] View
-    - [ ] Lists
-        - [ ] List membership (view only, no editing)
-        - [ ] Use a tree
+- [x] View
+    - [x] Lists
+        - [x] List membership (view only, no editing)
+        - [x] Use a tree
     - [x] Employees
         - [x] All employees
         - [x] Sub-views for std and admin employees
     - [x] Allow upload of CSV file to load active employees
     - [x] Allow download of CSV file from active employees table (built-in to APEX)
-- [ ] Export APEX application
