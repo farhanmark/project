@@ -1,6 +1,6 @@
 APEX
 ====
-https://apex.oracle.com/pls/apex/f?p=91458:1:32321253844660::NO:::
+The application can be accessed [here](https://apex.oracle.com/pls/apex/f?p=91458).
 
 Username: test
 
@@ -10,37 +10,35 @@ The application is exported as [f91458.sql](./f91458.sql).
 
 Data Models
 ===========
-All data models are in the `models` directory.
+All data models are in the [models](./models) directory.
 
-*Conceptual Model*: This is our conceptual model. It was originally based on the one given in class, but it has morphed quited a bit.
+[*Conceptual Model*](./models): This is our conceptual model. It was originally based on the one given in class, but it has morphed quited a bit.
 
 ![Image of conceptual model]
 (./models/conceptual.png)
 
-*Logical Model 1*: This model is call `logical_model`. It was our first attempt, but since it rolled up the active employees table, it was reformed into the second logical model.
+[*Logical Model 1*](./models): This model is call `logical_model`. It was our first attempt, but since it rolled up the active employees table, it was reformed into the second logical model.
 
-*Logical Model 2*: This is our current model. It leaves the active employees table untouched by dealing with heirarchy in the conceptual model differently.
+[*Logical Model 2*](./models): This is our current model. It leaves the active employees table untouched by dealing with heirarchy in the conceptual model differently.
 
 ![Image of logical model]
 (./models/logical.png)
 
 
-Fullfillment of must-haves and nice-to-haves
-============================================
-1. We went through all must haves and determined approximately what was needed from home page instructions
-2. We added the Files table for file upload/download
-3. We will create views to accomodate any other needs if neccessary.
-
-
 Initial Review
 ==============
-Our initial review presentation is `Initial_review_presentation.odp`. Sorry, LibreOffice is all we had at the time.
+Our initial review presentation is [`Initial_review_presentation.odp`](./Initial_review_presentation.odp). It contains
+- Our initial logical and conceptual models
+- Step we took to make sure we could fullfill the must-haves and good-to-haves
+- Our original questions for the client
 
+Sorry, LibreOffice is all we had at the time.
 
 Final Review
 ============
 Coming sooner than I wish.
 
+Still in LibreOffice...
 
 Pages and Features (subject to change)
 ======================================
