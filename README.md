@@ -32,9 +32,7 @@ Sorry, LibreOffice is all we had at the time.
 
 Final Review
 ============
-Coming sooner than I wish.
-
-Still in LibreOffice...
+Final review presentation as a PDF: [`final_review_presentation.pdf`](./final_review_presentation.pdf).
 
 Pages and Features (subject to change)
 ======================================
